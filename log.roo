@@ -1,0 +1,13 @@
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-19 00:22:33
+project setup --topLevelPackage com.soja
+jpa setup --provider HIBERNATE --database MYSQL --databaseName soja --force --hostName localhost --password 700r700r --userName root
+entity jpa  --class ~.domain.Persona
+field string --fieldName alias --notNull 
+field string --fieldName genero --notNull --value Hombre --force
+field number --fieldName edad --type int
+repository jpa --all 
+service --all
+web mvc setup
+web mvc view setup --type THYMELEAF 
+web mvc controller --all --responseType THYMELEAF 
+web mvc controller --all --pathPrefix /api
