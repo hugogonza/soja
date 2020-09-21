@@ -24,14 +24,10 @@ field number --fieldName indiceCinturaCadera --type java.math.BigDecimal --colum
 field number --fieldName circunferenciaMuneca --type java.math.BigDecimal --column circunferencia_muneca --notNull --digitsInteger 2 --digitsFraction 2
 field date --fieldName fechaHoraEvaluacion --type java.util.Calendar --column fecha_hora_evaluacion --persistenceType JPA_TIMESTAMP --notNull
 focus --class ~.domain.Persona
-field set --fieldName lecturaComposicionCorporal --type ~.domain.LecturaComposicionCorporal --mappedBy persona --joinColumnName persona_id --notNull
+field set --fieldName lecturaComposicionCorporal --type ~.domain.LecturaComposicionCorporal --mappedBy persona --joinColumnName persona_id --notNull --orphanRemoval
 repository jpa --all 
 service --all
 web mvc setup
 web mvc view setup --type THYMELEAF 
 web mvc controller --all --responseType THYMELEAF 
 web mvc controller --all --pathPrefix /api
-// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-20 22:57:26
-focus --class ~.domain.Persona
-// [failed] field set --fieldName lecturaComposicionCorporal --type ~.domain.LecturaComposicionCorporal --mappedBy persona --joinColumnName persona_id --notNull --orphanRemoval --force
-// [failed] field set --fieldName lecturaComposicionCorporal --type ~.domain.LecturaComposicionCorporal --mappedBy persona --joinColumnName persona_id --notNull --orphanRemoval --force 
