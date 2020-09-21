@@ -12,19 +12,18 @@
   <groupId>com.soja</groupId>
   <artifactId>soja</artifactId>
   <version>1.0.0.BUILD-SNAPSHOT</version>
-  <name>Soja</name>
+  <name>soja</name>
 
   <packaging>jar</packaging>
 
   <properties>
     <roo.version>2.0.0.RELEASE</roo.version>
-    <java.product.version>8</java.product.version>
+    <java.product.version>6</java.product.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <aspectj.plugin.version>1.8</aspectj.plugin.version>
     <asciidoclet.version>1.5.4</asciidoclet.version>
     <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
-  <java.version>1.8</java.version>
-    <springlets.version>1.2.0.RELEASE</springlets.version>
+  <springlets.version>1.2.0.RELEASE</springlets.version>
     <tracee.version>1.1.2</tracee.version>
     <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
     <thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>
@@ -72,7 +71,7 @@
     <repository>
       <id>spring-roo-repository</id>
       <name>Spring Roo Repository</name>
-      <url>http://repo.spring.io/spring-roo</url>
+      <url>https://repo.spring.io/spring-roo</url>
     </repository>
   </repositories>
 
@@ -319,6 +318,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+			<version>8.0.21</version>
             <scope>provided</scope>
         </dependency>
     <dependency>
@@ -332,10 +332,6 @@
     <dependency>
             <groupId>io.springlets</groupId>
             <artifactId>springlets-context</artifactId>
-        </dependency>
-    <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
         </dependency>
     <dependency>
             <groupId>com.querydsl</groupId>
