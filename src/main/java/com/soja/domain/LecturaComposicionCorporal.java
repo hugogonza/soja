@@ -89,6 +89,7 @@ public class LecturaComposicionCorporal {
     @Column(name = "porcentaje_masa_corporal")
     @Min(0L)
     @Max(100L)
+    @Digits(integer = 2, fraction = 2)
     @NumberFormat
     private BigDecimal porcentajeMasaCorporal;
 
@@ -98,6 +99,7 @@ public class LecturaComposicionCorporal {
      */
     @NotNull
     @Column(name = "masa_magra")
+    @Digits(integer = 3, fraction = 2)
     @NumberFormat
     private BigDecimal masaMagra;
 
@@ -109,6 +111,7 @@ public class LecturaComposicionCorporal {
     @Column(name = "porcentaje_agua_corporal")
     @Min(0L)
     @Max(100L)
+    @Digits(integer = 2, fraction = 2)
     @NumberFormat
     private BigDecimal porcentajeAguaCorporal;
 
@@ -118,6 +121,7 @@ public class LecturaComposicionCorporal {
      */
     @NotNull
     @Column(name = "grasa_visceral")
+    @Digits(integer = 3, fraction = 2)
     @NumberFormat
     private Integer grasaVisceral;
 
