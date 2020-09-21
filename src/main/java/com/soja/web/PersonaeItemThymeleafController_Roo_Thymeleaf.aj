@@ -3,6 +3,7 @@
 
 package com.soja.web;
 
+import com.soja.Genero;
 import com.soja.domain.Persona;
 import com.soja.service.api.PersonaService;
 import com.soja.web.PersonaeCollectionThymeleafController;
@@ -15,8 +16,10 @@ import io.springlets.web.mvc.util.MethodLinkBuilderFactory;
 import io.springlets.web.mvc.util.concurrency.ConcurrencyCallback;
 import io.springlets.web.mvc.util.concurrency.ConcurrencyManager;
 import io.springlets.web.mvc.util.concurrency.ConcurrencyTemplate;
+import java.util.Arrays;
 import java.util.Locale;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -219,6 +222,7 @@ privileged aspect PersonaeItemThymeleafController_Roo_Thymeleaf {
      */
     public void PersonaeItemThymeleafController.populateFormats(Model model) {
         model.addAttribute("application_locale", LocaleContextHolder.getLocale().getLanguage());
+        model.addAttribute("fechaNacimiento_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     /**
@@ -228,6 +232,7 @@ privileged aspect PersonaeItemThymeleafController_Roo_Thymeleaf {
      */
     public void PersonaeItemThymeleafController.populateForm(Model model) {
         populateFormats(model);
+        model.addAttribute("genero", Arrays.asList(Genero.values()));
     }
     
     /**
@@ -264,7 +269,8 @@ privileged aspect PersonaeItemThymeleafController_Roo_Thymeleaf {
      * @return Integer
      */
     public Integer PersonaeItemThymeleafController.getLastVersion(Persona record) {
-        return getPersonaService().findOne(record.getId()).getVersion();
+        Long versionValue = getPersonaService().findOne(record.getId()).getVersion();
+        return versionValue != null ? versionValue.intValue() : null;
     }
     
     /**
@@ -327,7 +333,7 @@ privileged aspect PersonaeItemThymeleafController_Roo_Thymeleaf {
      * @return ModelAndView
      */
     @PutMapping(name = "update")
-    public ModelAndView PersonaeItemThymeleafController.update(@Valid @ModelAttribute Persona persona, BindingResult result, @RequestParam("version") Integer version, @RequestParam(value = "concurrency", required = false, defaultValue = "") String concurrencyControl, Model model) {
+    public ModelAndView PersonaeItemThymeleafController.update(@Valid @ModelAttribute Persona persona, BindingResult result, @RequestParam("version") Long version, @RequestParam(value = "concurrency", required = false, defaultValue = "") String concurrencyControl, Model model) {
         // Check if provided form contain errors
         if (result.hasErrors()) {
             populateForm(model);

@@ -35,7 +35,7 @@ privileged aspect PersonaRepositoryImpl_Roo_Jpa_Repository_Impl {
      * TODO Auto-generated attribute documentation
      * 
      */
-    public static final String PersonaRepositoryImpl.EDAD = "edad";
+    public static final String PersonaRepositoryImpl.FECHA_NACIMIENTO = "fechaNacimiento";
     
     /**
      * TODO Auto-generated method documentation
@@ -50,13 +50,13 @@ privileged aspect PersonaRepositoryImpl_Roo_Jpa_Repository_Impl {
         
         JPQLQuery<Persona> query = from(persona);
         
-        Path<?>[] paths = new Path<?>[] {persona.alias,persona.genero,persona.edad};        
+        Path<?>[] paths = new Path<?>[] {persona.alias,persona.genero,persona.fechaNacimiento};        
         applyGlobalSearch(globalSearch, query, paths);
         
         AttributeMappingBuilder mapping = buildMapper()
 			.map(ALIAS, persona.alias)
 			.map(GENERO, persona.genero)
-			.map(EDAD, persona.edad);
+			.map(FECHA_NACIMIENTO, persona.fechaNacimiento);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);
@@ -78,7 +78,7 @@ privileged aspect PersonaRepositoryImpl_Roo_Jpa_Repository_Impl {
         
         JPQLQuery<Persona> query = from(persona);
         
-        Path<?>[] paths = new Path<?>[] {persona.alias,persona.genero,persona.edad};        
+        Path<?>[] paths = new Path<?>[] {persona.alias,persona.genero,persona.fechaNacimiento};        
         applyGlobalSearch(globalSearch, query, paths);
         
         // Also, filter by the provided ids
@@ -87,7 +87,7 @@ privileged aspect PersonaRepositoryImpl_Roo_Jpa_Repository_Impl {
         AttributeMappingBuilder mapping = buildMapper()
 			.map(ALIAS, persona.alias)
 			.map(GENERO, persona.genero)
-			.map(EDAD, persona.edad);
+			.map(FECHA_NACIMIENTO, persona.fechaNacimiento);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);

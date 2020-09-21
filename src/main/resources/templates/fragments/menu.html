@@ -23,13 +23,13 @@
 
               <!-- Brand logo -->
               <div class="organization-logo navbar-brand">
-                <a title="soja" href="/" data-th-href="@{/}">
-                  <img alt="soja" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
+                <a title="Soja" href="/" data-th-href="@{/}">
+                  <img alt="Soja" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
                 </a>
               </div>
               <!-- Name application -->
               <div class="application-name navbar-brand hidden-xs">
-                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">soja</a>
+                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">Soja</a>
               </div>
 
             </div><!-- /navbar-header -->
@@ -37,6 +37,13 @@
             <div id="mainnav" class="navbar-collapse collapse">
 
               <ul class="nav navbar-nav" id="entitiesMenuEntries">
+                <li class="dropdown" id="lecturacomposicioncorporal-entry" data-z="8ddabaa8">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_lecturacomposicioncorporal})}">LecturaComposicionCorporal<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/lecturacomposicioncorporals/create-form" data-th-href="@{/lecturacomposicioncorporals/create-form}" data-th-utext="#{label_create_entity(#{label_lecturacomposicioncorporal})}">Create LecturaComposicionCorporal</a></li>
+	                  <li><a href="/lecturacomposicioncorporals" data-th-href="@{/lecturacomposicioncorporals}" data-th-utext="#{label_list_entity(#{label_lecturacomposicioncorporal_plural})}">List LecturaComposicionCorporal</a></li>
+                 </ul>
+                </li>
                 <li class="dropdown" id="persona-entry" data-z="fdbb18a4">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_persona})}">Persona<span class="caret"></span></a>
                  <ul class="dropdown-menu">
@@ -78,13 +85,13 @@
 
               <!-- Brand logo -->
               <div class="organization-logo navbar-brand">
-                <a title="soja" href="/" data-th-href="@{/}">
-                  <img alt="soja" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
+                <a title="Soja" href="/" data-th-href="@{/}">
+                  <img alt="Soja" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
                 </a>
               </div>
               <!-- Name application -->
               <div class="application-name navbar-brand hidden-xs">
-                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">soja</a>
+                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">Soja</a>
               </div>
 
             </div><!-- /navbar-header -->

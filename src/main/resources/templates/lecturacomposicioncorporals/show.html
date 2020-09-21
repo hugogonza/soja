@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layouts/default-list-layout}">
+  <head id="head">
+
+    <title data-th-text="|#{label_show_entity(#{label_lecturacomposicioncorporal})}|">Show LecturaComposicionCorporal - Spring Roo application</title>
+
+  </head>
+
+  <body id="body">
+
+    <header role="banner">
+      <!-- Content replaced by layout of the page displayed -->
+    </header>
+
+    <!--CONTAINER-->
+    <div class="container bg-container">
+      <!-- CONTENT -->
+      <!--
+        Only the inner content of the following tag "section" is included
+        within the template, in the section "content"
+      -->
+      <section data-layout-fragment="content" data-th-object="${lecturaComposicionCorporal}">
+        <div class="container-fluid content">
+
+          <!-- CONTENT -->
+          <h1 data-th-text="#{label_show_entity(#{label_lecturacomposicioncorporal})}">Show LecturaComposicionCorporal</h1>
+
+            <div id="mainEntityFieldSet">
+              <h2 data-th-text="#{label_data_entity(#{label_lecturacomposicioncorporal})}">LecturaComposicionCorporal data</h2>
+              <ul class="list-unstyled" id="containerFields">
+                  <li id="lecturacomposicioncorporal-estatura-field" data-z="86ddd44">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_estatura}">estatura</strong>
+                    <span data-th-text="*{{estatura}}">estaturaValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-peso-field" data-z="a421cf04">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_peso}">peso</strong>
+                    <span data-th-text="*{{peso}}">pesoValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-imc-field" data-z="7044531a">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_imc}">imc</strong>
+                    <span data-th-text="*{{imc}}">imcValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-porcentajemasacorporal-field" data-z="36a3aec4">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_porcentajemasacorporal}">porcentajeMasaCorporal</strong>
+                    <span data-th-text="*{{porcentajeMasaCorporal}}">porcentajeMasaCorporalValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-masamagra-field" data-z="79bba29a">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_masamagra}">masaMagra</strong>
+                    <span data-th-text="*{{masaMagra}}">masaMagraValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-porcentajeaguacorporal-field" data-z="7082a4c4">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_porcentajeaguacorporal}">porcentajeAguaCorporal</strong>
+                    <span data-th-text="*{{porcentajeAguaCorporal}}">porcentajeAguaCorporalValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-grasavisceral-field" data-z="6665a17a">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_grasavisceral}">grasaVisceral</strong>
+                    <span data-th-text="*{{grasaVisceral}}">grasaVisceralValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-circunferenciacintura-field" data-z="62c02cfa">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_circunferenciacintura}">circunferenciaCintura</strong>
+                    <span data-th-text="*{{circunferenciaCintura}}">circunferenciaCinturaValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-circunferenciacadera-field" data-z="2317d3a4">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_circunferenciacadera}">circunferenciaCadera</strong>
+                    <span data-th-text="*{{circunferenciaCadera}}">circunferenciaCaderaValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-indicecinturacadera-field" data-z="cc2035ba">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_indicecinturacadera}">indiceCinturaCadera</strong>
+                    <span data-th-text="*{{indiceCinturaCadera}}">indiceCinturaCaderaValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-circunferenciamuneca-field" data-z="9895c9c4">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_circunferenciamuneca}">circunferenciaMuneca</strong>
+                    <span data-th-text="*{{circunferenciaMuneca}}">circunferenciaMunecaValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-fechahoraevaluacion-field" data-z="9b1dd3a">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_fechahoraevaluacion}">fechaHoraEvaluacion</strong>
+                    <span data-th-text="*{{fechaHoraEvaluacion}}">fechaHoraEvaluacionValue</span>
+         	        </li>
+                  <li id="lecturacomposicioncorporal-persona-field" data-z="dc6843fa">
+            	      <strong data-th-text="#{label_lecturacomposicioncorporal_persona}">persona</strong>
+                    <span data-th-text="*{{persona}}">personaValue</span>
+         	        </li>
+              </ul>
+            </div>
+
+
+          <div class="clearfix">
+            <div class="pull-right">
+             <a id="LecturaComposicionCorporal_edit" href="edit.html" class="btn btn-primary" data-th-title="#{label_goEdit}" data-th-href="${@linkBuilder.of('LecturaComposicionCorporalsItemThymeleafController').to('editForm').with('lecturaComposicionCorporal', lecturaComposicionCorporal.id)}" data-th-text="#{label_edit}">Edit</a>
+            </div>
+          </div>
+
+
+          <div class="clearfix">
+            <div class="pull-left">
+              <a id="LecturaComposicionCorporal_list" href="list.html" class="btn btn-default" data-th-title="#{label_goBack}" data-th-href="${@linkBuilder.of('LecturaComposicionCorporalsCollectionThymeleafController').to('list')}">
+  	             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  	             <span data-th-text="#{label_back}">Back</span>
+  	          </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- /CONTENT -->
+  </div>
+  <!-- /CONTAINER -->
+
+  <footer class="container">
+    <!-- Content replaced by layout of the page displayed -->
+  </footer>
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so that the pages load faster -->
+  <!-- JavaScript loaded by layout of the page displayed -->
+  <!--
+       Only the inner content of the following tag "javascript" is included
+       within the template, in the div "javascript"
+      -->
+  <div data-layout-fragment="javascript">
+  </div>
+
+  </body>
+
+</html>

@@ -3,15 +3,20 @@
 
 package com.soja.domain;
 
+import com.soja.domain.LecturaComposicionCorporal;
 import com.soja.domain.Persona;
 import io.springlets.format.EntityFormat;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+import org.springframework.util.Assert;
 
 privileged aspect Persona_Roo_Jpa_Entity {
     
     declare @type: Persona: @Entity;
     
-    declare @type: Persona: @EntityFormat;
+    declare @type: Persona: @Table(name = "persona");
+    
+    declare @type: Persona: @EntityFormat("#{alias}");
     
     /**
      * TODO Auto-generated attribute documentation
@@ -24,5 +29,31 @@ privileged aspect Persona_Roo_Jpa_Entity {
      * 
      */
     public static final String Persona.ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE = "The given Iterable of items to add can't be null!";
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param lecturaComposicionCorporalToAdd
+     */
+    public void Persona.addToLecturaComposicionCorporal(Iterable<LecturaComposicionCorporal> lecturaComposicionCorporalToAdd) {
+        Assert.notNull(lecturaComposicionCorporalToAdd, ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE);
+        for (LecturaComposicionCorporal item : lecturaComposicionCorporalToAdd) {
+            this.lecturaComposicionCorporal.add(item);
+            item.setPersona(this);
+        }
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param lecturaComposicionCorporalToRemove
+     */
+    public void Persona.removeFromLecturaComposicionCorporal(Iterable<LecturaComposicionCorporal> lecturaComposicionCorporalToRemove) {
+        Assert.notNull(lecturaComposicionCorporalToRemove, ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE);
+        for (LecturaComposicionCorporal item : lecturaComposicionCorporalToRemove) {
+            this.lecturaComposicionCorporal.remove(item);
+            item.setPersona(null);
+        }
+    }
     
 }

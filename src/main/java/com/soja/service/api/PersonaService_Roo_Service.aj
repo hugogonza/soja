@@ -99,4 +99,31 @@ privileged aspect PersonaService_Roo_Service {
      */
     public abstract Page<Persona> PersonaService.findAllByIdsIn(List<Long> ids, GlobalSearch globalSearch, Pageable pageable);
     
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param lecturaComposicionCorporalToAdd
+     * @return Persona
+     */
+    public abstract Persona PersonaService.addToLecturaComposicionCorporal(Persona persona, Iterable<Long> lecturaComposicionCorporalToAdd);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param lecturaComposicionCorporalToRemove
+     * @return Persona
+     */
+    public abstract Persona PersonaService.removeFromLecturaComposicionCorporal(Persona persona, Iterable<Long> lecturaComposicionCorporalToRemove);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param lecturaComposicionCorporal
+     * @return Persona
+     */
+    public abstract Persona PersonaService.setLecturaComposicionCorporal(Persona persona, Iterable<Long> lecturaComposicionCorporal);
+    
 }

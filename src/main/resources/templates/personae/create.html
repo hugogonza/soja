@@ -3,7 +3,7 @@
   <head id="head">
 
     <title data-th-text="#{label_create_entity(#{label_persona})}">
-      Create Persona - soja - SpringRoo Application</title>
+      Create Persona - Soja - SpringRoo Application</title>
 
     <!-- DateTimePicker -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css" data-th-href="@{/webjars/datetimepicker/build/jquery.datetimepicker.min.css}" />
@@ -43,19 +43,21 @@
   </div>
 </div>
 <div class="form-group has-error has-feedback" data-z="da693141" id="persona-genero-field" data-th-classappend="${#fields.hasErrors('genero')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="genero" class="col-md-3 control-label" data-th-text="#{label_persona_genero}">genero</label>
-  <div class="col-md-6">
-    <input id="genero" name="genero" data-th-value="*{{genero}}" type="text" class="form-control" placeholder="genero" data-th-placeholder="#{label_persona_genero}" data-toggle="tooltip" aria-describedby="generoStatus" required="required" />
+    <label for="genero" class="col-md-3 control-label" data-th-text="#{label_persona_genero}">genero</label>
+    <div class="col-md-6">
+      <!-- Select2 -->
+      <select data-th-field="*{genero}" class="form-control dropdown-select-simple" data-allow-clear="true" data-th-attr="data-placeholder=#{info_select_an_option}" required="required">
+         <option data-th-each="item : ${genero}" data-th-value="${item}" data-th-text="${{item}}">Value</option>
+      </select>
       <span data-th-classappend="${#fields.hasErrors('genero')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('genero')}" aria-hidden="true"></span>
       <span id="genero-error" class="help-block" data-th-if="${#fields.hasErrors('genero')}" data-th-errors="*{genero}">Error message.</span>
-  </div>
+    </div>
 </div>
-<div class="form-group has-error has-feedback" data-z="9765b3c1" id="persona-edad-field" data-th-classappend="${#fields.hasErrors('edad')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="edad" class="col-md-3 control-label" data-th-text="#{label_persona_edad}">edad</label>
+<div class="form-group has-error has-feedback" id="persona-fechanacimiento-field" data-z="c7d1c4dd" data-th-classappend="${#fields.hasErrors('fechaNacimiento')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="fechaNacimiento" class="col-md-3 control-label" data-th-text="#{label_persona_fechanacimiento}">fechaNacimiento</label>
   <div class="col-md-3">
-    <input id="edad" name="edad" data-th-value="*{{edad}}" type="text" class="form-control inputmask" placeholder="edad" data-th-placeholder="#{label_persona_edad}" data-toggle="tooltip" aria-describedby="edadStatus" data-inputmask-alias="numeric" data-inputmask-digits="0" />
-      <span data-th-classappend="${#fields.hasErrors('edad')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('edad')}" aria-hidden="true"></span>
-      <span id="edad-error" class="help-block" data-th-if="${#fields.hasErrors('edad')}" data-th-errors="*{edad}">Error message.</span>
+    <input id="fechaNacimiento" name="fechaNacimiento" data-th-value="*{{fechaNacimiento}}" type="text" class="form-control datetimepicker" placeholder="fechaNacimiento" data-th-placeholder="#{label_persona_fechanacimiento}" data-th-attr="data-dateformat=${fechaNacimiento_date_format}" data-toggle="tooltip" required="required" /> <span data-th-classappend="${#fields.hasErrors('fechaNacimiento')}? 'glyphicon glyphicon-remove form-control-feedback'" data-th-if="${#fields.hasErrors('fechaNacimiento')}" aria-hidden="true"></span>
+     <span id="fechaNacimiento-error" class="help-block" data-th-if="${#fields.hasErrors('fechaNacimiento')}" data-th-errors="*{fechaNacimiento}">Error message.</span>
   </div>
 </div>
             </fieldset>

@@ -3,14 +3,20 @@
 
 package com.soja.service.impl;
 
+import com.soja.domain.LecturaComposicionCorporal;
 import com.soja.domain.Persona;
 import com.soja.repository.PersonaRepository;
+import com.soja.service.api.LecturaComposicionCorporalService;
 import com.soja.service.impl.PersonaServiceImpl;
 import io.springlets.data.domain.GlobalSearch;
 import io.springlets.data.web.validation.MessageI18n;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -29,13 +35,21 @@ privileged aspect PersonaServiceImpl_Roo_Service_Impl {
     private PersonaRepository PersonaServiceImpl.personaRepository;
     
     /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    private LecturaComposicionCorporalService PersonaServiceImpl.lecturaComposicionCorporalService;
+    
+    /**
      * TODO Auto-generated constructor documentation
      * 
      * @param personaRepository
+     * @param lecturaComposicionCorporalService
      */
     @Autowired
-    public PersonaServiceImpl.new(PersonaRepository personaRepository) {
+    public PersonaServiceImpl.new(PersonaRepository personaRepository, @Lazy LecturaComposicionCorporalService lecturaComposicionCorporalService) {
         setPersonaRepository(personaRepository);
+        setLecturaComposicionCorporalService(lecturaComposicionCorporalService);
     }
 
     /**
@@ -59,6 +73,24 @@ privileged aspect PersonaServiceImpl_Roo_Service_Impl {
     /**
      * TODO Auto-generated method documentation
      * 
+     * @return LecturaComposicionCorporalService
+     */
+    public LecturaComposicionCorporalService PersonaServiceImpl.getLecturaComposicionCorporalService() {
+        return lecturaComposicionCorporalService;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param lecturaComposicionCorporalService
+     */
+    public void PersonaServiceImpl.setLecturaComposicionCorporalService(LecturaComposicionCorporalService lecturaComposicionCorporalService) {
+        this.lecturaComposicionCorporalService = lecturaComposicionCorporalService;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
      * @param persona
      * @return Map
      */
@@ -74,9 +106,70 @@ privileged aspect PersonaServiceImpl_Roo_Service_Impl {
      * TODO Auto-generated method documentation
      * 
      * @param persona
+     * @param lecturaComposicionCorporalToAdd
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.addToLecturaComposicionCorporal(Persona persona, Iterable<Long> lecturaComposicionCorporalToAdd) {
+        List<LecturaComposicionCorporal> lecturaComposicionCorporal = getLecturaComposicionCorporalService().findAll(lecturaComposicionCorporalToAdd);
+        persona.addToLecturaComposicionCorporal(lecturaComposicionCorporal);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param lecturaComposicionCorporalToRemove
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.removeFromLecturaComposicionCorporal(Persona persona, Iterable<Long> lecturaComposicionCorporalToRemove) {
+        List<LecturaComposicionCorporal> lecturaComposicionCorporal = getLecturaComposicionCorporalService().findAll(lecturaComposicionCorporalToRemove);
+        persona.removeFromLecturaComposicionCorporal(lecturaComposicionCorporal);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param lecturaComposicionCorporal
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.setLecturaComposicionCorporal(Persona persona, Iterable<Long> lecturaComposicionCorporal) {
+        List<LecturaComposicionCorporal> items = getLecturaComposicionCorporalService().findAll(lecturaComposicionCorporal);
+        Set<LecturaComposicionCorporal> currents = persona.getLecturaComposicionCorporal();
+        Set<LecturaComposicionCorporal> toRemove = new HashSet<LecturaComposicionCorporal>();
+        for (Iterator<LecturaComposicionCorporal> iterator = currents.iterator(); iterator.hasNext();) {
+            LecturaComposicionCorporal nextLecturaComposicionCorporal = iterator.next();
+            if (items.contains(nextLecturaComposicionCorporal)) {
+                items.remove(nextLecturaComposicionCorporal);
+            } else {
+                toRemove.add(nextLecturaComposicionCorporal);
+            }
+        }
+        persona.removeFromLecturaComposicionCorporal(toRemove);
+        persona.addToLecturaComposicionCorporal(items);
+        // Force the version update of the parent side to know that the parent has changed
+        // because it has new books assigned
+        persona.setVersion(persona.getVersion() + 1);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
      */
     @Transactional
     public void PersonaServiceImpl.delete(Persona persona) {
+        // Clear bidirectional one-to-many parent relationship with LecturaComposicionCorporal
+        for (LecturaComposicionCorporal item : persona.getLecturaComposicionCorporal()) {
+            item.setPersona(null);
+        }
+        
         getPersonaRepository().delete(persona);
     }
     

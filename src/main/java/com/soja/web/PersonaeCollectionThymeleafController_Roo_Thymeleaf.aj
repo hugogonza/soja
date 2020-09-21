@@ -7,6 +7,7 @@ import ar.com.fdvs.dj.core.DynamicJasperHelper;
 import ar.com.fdvs.dj.core.layout.ClassicLayoutManager;
 import ar.com.fdvs.dj.domain.builders.ColumnBuilderException;
 import ar.com.fdvs.dj.domain.builders.FastReportBuilder;
+import com.soja.Genero;
 import com.soja.domain.Persona;
 import com.soja.service.api.PersonaService;
 import com.soja.web.PersonaeCollectionThymeleafController;
@@ -28,6 +29,8 @@ import io.springlets.data.web.validation.GenericValidator;
 import io.springlets.web.mvc.util.ControllerMethodLinkBuilderFactory;
 import io.springlets.web.mvc.util.MethodLinkBuilderFactory;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
@@ -38,6 +41,7 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.apache.commons.lang3.StringUtils;
+import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -297,6 +301,7 @@ privileged aspect PersonaeCollectionThymeleafController_Roo_Thymeleaf {
      */
     public void PersonaeCollectionThymeleafController.populateFormats(Model model) {
         model.addAttribute("application_locale", LocaleContextHolder.getLocale().getLanguage());
+        model.addAttribute("fechaNacimiento_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     /**
@@ -306,6 +311,7 @@ privileged aspect PersonaeCollectionThymeleafController_Roo_Thymeleaf {
      */
     public void PersonaeCollectionThymeleafController.populateForm(Model model) {
         populateFormats(model);
+        model.addAttribute("genero", Arrays.asList(Genero.values()));
     }
     
     /**
@@ -515,16 +521,16 @@ privileged aspect PersonaeCollectionThymeleafController_Roo_Thymeleaf {
             builder.addColumn(getMessageSource().getMessage("label_persona_id", null, "Id", locale), "id", Long.class.getName(), 50);
         }
         else if (columnName.equals("version")) {
-            builder.addColumn(getMessageSource().getMessage("label_persona_version", null, "Version", locale), "version", Integer.class.getName(), 100);
+            builder.addColumn(getMessageSource().getMessage("label_persona_version", null, "Version", locale), "version", Long.class.getName(), 100);
         }
         else if (columnName.equals("alias")) {
             builder.addColumn(getMessageSource().getMessage("label_persona_alias", null, "Alias", locale), "alias", String.class.getName(), 100);
         }
         else if (columnName.equals("genero")) {
-            builder.addColumn(getMessageSource().getMessage("label_persona_genero", null, "Genero", locale), "genero", String.class.getName(), 100);
+            builder.addColumn(getMessageSource().getMessage("label_persona_genero", null, "Genero", locale), "genero", Genero.class.getName(), 100);
         }
-        else if (columnName.equals("edad")) {
-            builder.addColumn(getMessageSource().getMessage("label_persona_edad", null, "Edad", locale), "edad", Integer.class.getName(), 100);
+        else if (columnName.equals("fechaNacimiento")) {
+            builder.addColumn(getMessageSource().getMessage("label_persona_fechanacimiento", null, "Fecha Nacimiento", locale), "fechaNacimiento", Calendar.class.getName(), 100);
         }
         }
         catch (ColumnBuilderException e) {

@@ -3,8 +3,12 @@
 
 package com.soja.domain;
 
+import com.soja.Genero;
+import com.soja.domain.LecturaComposicionCorporal;
 import com.soja.domain.Persona;
+import java.util.Calendar;
 import java.util.Objects;
+import java.util.Set;
 
 privileged aspect Persona_Roo_JavaBean {
     
@@ -31,9 +35,9 @@ privileged aspect Persona_Roo_JavaBean {
     /**
      * Gets version value
      * 
-     * @return Integer
+     * @return Long
      */
-    public Integer Persona.getVersion() {
+    public Long Persona.getVersion() {
         return this.version;
     }
     
@@ -43,7 +47,7 @@ privileged aspect Persona_Roo_JavaBean {
      * @param version
      * @return Persona
      */
-    public Persona Persona.setVersion(Integer version) {
+    public Persona Persona.setVersion(Long version) {
         this.version = version;
         return this;
     }
@@ -71,9 +75,9 @@ privileged aspect Persona_Roo_JavaBean {
     /**
      * Gets genero value
      * 
-     * @return String
+     * @return Genero
      */
-    public String Persona.getGenero() {
+    public Genero Persona.getGenero() {
         return this.genero;
     }
     
@@ -83,28 +87,48 @@ privileged aspect Persona_Roo_JavaBean {
      * @param genero
      * @return Persona
      */
-    public Persona Persona.setGenero(String genero) {
+    public Persona Persona.setGenero(Genero genero) {
         this.genero = genero;
         return this;
     }
     
     /**
-     * Gets edad value
+     * Gets fechaNacimiento value
      * 
-     * @return Integer
+     * @return Calendar
      */
-    public int Persona.getEdad() {
-        return this.edad;
+    public Calendar Persona.getFechaNacimiento() {
+        return this.fechaNacimiento;
     }
     
     /**
-     * Sets edad value
+     * Sets fechaNacimiento value
      * 
-     * @param edad
+     * @param fechaNacimiento
      * @return Persona
      */
-    public Persona Persona.setEdad(int edad) {
-        this.edad = edad;
+    public Persona Persona.setFechaNacimiento(Calendar fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+        return this;
+    }
+    
+    /**
+     * Gets lecturaComposicionCorporal value
+     * 
+     * @return Set
+     */
+    public Set<LecturaComposicionCorporal> Persona.getLecturaComposicionCorporal() {
+        return this.lecturaComposicionCorporal;
+    }
+    
+    /**
+     * Sets lecturaComposicionCorporal value
+     * 
+     * @param lecturaComposicionCorporal
+     * @return Persona
+     */
+    public Persona Persona.setLecturaComposicionCorporal(Set<LecturaComposicionCorporal> lecturaComposicionCorporal) {
+        this.lecturaComposicionCorporal = lecturaComposicionCorporal;
         return this;
     }
     
@@ -148,8 +172,7 @@ privileged aspect Persona_Roo_JavaBean {
                 "id='" + id + '\'' + 
                 ", version='" + version + '\'' + 
                 ", alias='" + alias + '\'' + 
-                ", genero='" + genero + '\'' + 
-                ", edad='" + edad + '\'' + "}" + super.toString();
+                ", fechaNacimiento='" + fechaNacimiento == null ? null : java.text.DateFormat.getDateTimeInstance().format(fechaNacimiento.getTime()) + '\'' + "}" + super.toString();
     }
     
 }

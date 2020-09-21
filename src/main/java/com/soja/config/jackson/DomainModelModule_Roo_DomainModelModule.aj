@@ -5,7 +5,9 @@ package com.soja.config.jackson;
 
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.soja.config.jackson.DomainModelModule;
+import com.soja.domain.LecturaComposicionCorporal;
 import com.soja.domain.Persona;
+import com.soja.web.LecturaComposicionCorporalJsonMixin;
 import com.soja.web.PersonaJsonMixin;
 import org.springframework.boot.jackson.JsonComponent;
 
@@ -22,6 +24,7 @@ privileged aspect DomainModelModule_Roo_DomainModelModule {
     public DomainModelModule.new() {
         // Mixin registration
         
+        setMixInAnnotation(LecturaComposicionCorporal.class, LecturaComposicionCorporalJsonMixin.class);
         setMixInAnnotation(Persona.class, PersonaJsonMixin.class);
     }
 
