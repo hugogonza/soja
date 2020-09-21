@@ -179,6 +179,7 @@ public class LecturaComposicionCorporal {
      * TODO Auto-generated attribute documentation
      *
      */
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "persona_id")
     @EntityFormat

@@ -42,7 +42,7 @@ privileged aspect WebMvcConfiguration_Roo_WebMvcConfiguration {
     @Bean
     public LocaleResolver WebMvcConfiguration.localeResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-        localeResolver.setDefaultLocale(new Locale("en"));
+        localeResolver.setDefaultLocale(new Locale("es"));
         return localeResolver;
     }
     

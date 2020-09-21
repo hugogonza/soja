@@ -28,6 +28,7 @@ field set --fieldName lecturaComposicionCorporal --type ~.domain.LecturaComposic
 repository jpa --all 
 service --all
 web mvc setup
-web mvc view setup --type THYMELEAF 
-web mvc controller --all --responseType THYMELEAF 
+web mvc language --code es --useAsDefault
+web mvc view setup --type THYMELEAF
+web mvc controller --all --responseType THYMELEAF
 web mvc controller --all --pathPrefix /api

@@ -8,7 +8,7 @@ import org.springframework.roo.addon.web.mvc.thymeleaf.annotations.RooWebMvcThym
  TODO Auto-generated class documentation
  *
  */
-@RooWebMvcConfiguration(defaultLanguage = "en")
+@RooWebMvcConfiguration(defaultLanguage = "es")
 @RooWebMvcThymeleafUIConfiguration
 public class WebMvcConfiguration implements ApplicationContextAware {
 }
