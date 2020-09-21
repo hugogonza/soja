@@ -24,44 +24,11 @@ field number --fieldName indiceCinturaCadera --type java.math.BigDecimal --colum
 field number --fieldName circunferenciaMuneca --type java.math.BigDecimal --column circunferencia_muneca --notNull --digitsInteger 2 --digitsFraction 2
 field date --fieldName fechaHoraEvaluacion --type java.util.Calendar --column fecha_hora_evaluacion --persistenceType JPA_TIMESTAMP --notNull
 focus --class ~.domain.Persona
-field set --fieldName lecturaComposicionCorporal --type ~.domain.LecturaComposicionCorporal --mappedBy persona --joinColumnName persona_id --notNull
+field set --fieldName lecturaComposicionCorporal --type ~.domain.LecturaComposicionCorporal --mappedBy persona --joinColumnName persona_id --notNull --orphanRemoval
 repository jpa --all 
 service --all
 web mvc setup
-web mvc view setup --type THYMELEAF 
-web mvc controller --all --responseType THYMELEAF 
+web mvc language --code es --useAsDefault
+web mvc view setup --type THYMELEAF
+web mvc controller --all --responseType THYMELEAF
 web mvc controller --all --pathPrefix /api
-// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-20 22:48:16
-project setup --topLevelPackage com.soja --projectName Soja --java 8
-jpa setup --provider HIBERNATE --database MYSQL --databaseName soja --hostName localhost --password 700r700r --userName root
-enum type --class ~.Genero
-enum constant --name HOMBRE --class ~.Genero
-enum constant --name MUJER --class ~.Genero
-entity jpa --class ~.domain.Persona --table persona --identifierColumn persona_id --versionField version --versionType java.lang.Long --versionColumn VERSION --entityFormatExpression "#{alias}"
-focus --class ~.domain.Persona
-field string --fieldName alias --column alias --notNull --unique
-field enum --fieldName genero --type ~.Genero --column genero --enumType STRING --notNull
-field date --fieldName fechaNacimiento --type java.util.Calendar --column fecha_nacimiento --notNull
-entity jpa --class ~.domain.LecturaComposicionCorporal --table lectura_composicion_corporal --identifierColumn lectura_composicion_corporal_id --versionField version --versionType java.lang.Long --versionColumn VERSION
-focus --class ~.domain.LecturaComposicionCorporal
-field number --fieldName estatura --type java.math.BigDecimal --column estatura --notNull --digitsInteger 1 --digitsFraction 2
-field number --fieldName peso --type java.math.BigDecimal --column peso --notNull --digitsInteger 3 --digitsFraction 2
-field number --fieldName imc --type java.math.BigDecimal --column imc --notNull --digitsInteger 2 --digitsFraction 2
-field number --fieldName porcentajeMasaCorporal --type java.math.BigDecimal --column porcentaje_masa_corporal --notNull --min 0 --max 100 --digitsInteger 2 --digitsFraction 2
-field number --fieldName masaMagra --type java.math.BigDecimal --column masa_magra --notNull --digitsInteger 3 --digitsFraction 2
-field number --fieldName porcentajeAguaCorporal --type java.math.BigDecimal --column porcentaje_agua_corporal --notNull --min 0 --max 100 --digitsInteger 2 --digitsFraction 2
-field number --fieldName grasaVisceral --type java.lang.Integer --column grasa_visceral --notNull --digitsInteger 3 --digitsFraction 2
-field number --fieldName circunferenciaCintura --type java.math.BigDecimal --column circunferencia_cintura --notNull --digitsInteger 3 --digitsFraction 2
-field number --fieldName circunferenciaCadera --type java.math.BigDecimal --column circunferencia_cadera --notNull --digitsInteger 3 --digitsFraction 2
-field number --fieldName indiceCinturaCadera --type java.math.BigDecimal --column indice_cintura_cadera --notNull --digitsInteger 3 --digitsFraction 2
-field number --fieldName circunferenciaMuneca --type java.math.BigDecimal --column circunferencia_muneca --notNull --digitsInteger 2 --digitsFraction 2
-field date --fieldName fechaHoraEvaluacion --type java.util.Calendar --column fecha_hora_evaluacion --persistenceType JPA_TIMESTAMP --notNull
-focus --class ~.domain.Persona
-field set --fieldName lecturaComposicionCorporal --type ~.domain.LecturaComposicionCorporal --mappedBy persona --joinColumnName persona_id --notNull
-repository jpa --all 
-service --all
-web mvc setup
-web mvc view setup --type THYMELEAF 
-web mvc controller --all --responseType THYMELEAF 
-web mvc controller --all --pathPrefix /api
-// script --file log.roo
