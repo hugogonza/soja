@@ -32,3 +32,7 @@ web mvc language --code es --useAsDefault
 web mvc view setup --type THYMELEAF
 web mvc controller --all --responseType THYMELEAF
 web mvc controller --all --pathPrefix /api
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-21 22:50:25
+focus --class ~.domain.Persona
+help field number
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 13:27:49
