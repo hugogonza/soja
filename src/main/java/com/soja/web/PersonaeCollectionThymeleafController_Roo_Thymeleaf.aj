@@ -8,6 +8,7 @@ import ar.com.fdvs.dj.core.layout.ClassicLayoutManager;
 import ar.com.fdvs.dj.domain.builders.ColumnBuilderException;
 import ar.com.fdvs.dj.domain.builders.FastReportBuilder;
 import com.soja.Genero;
+import com.soja.Grupo;
 import com.soja.domain.Persona;
 import com.soja.service.api.PersonaService;
 import com.soja.web.PersonaeCollectionThymeleafController;
@@ -312,6 +313,7 @@ privileged aspect PersonaeCollectionThymeleafController_Roo_Thymeleaf {
     public void PersonaeCollectionThymeleafController.populateForm(Model model) {
         populateFormats(model);
         model.addAttribute("genero", Arrays.asList(Genero.values()));
+        model.addAttribute("grupo", Arrays.asList(Grupo.values()));
     }
     
     /**
@@ -531,6 +533,9 @@ privileged aspect PersonaeCollectionThymeleafController_Roo_Thymeleaf {
         }
         else if (columnName.equals("fechaNacimiento")) {
             builder.addColumn(getMessageSource().getMessage("label_persona_fechanacimiento", null, "Fecha Nacimiento", locale), "fechaNacimiento", Calendar.class.getName(), 100);
+        }
+        else if (columnName.equals("grupo")) {
+            builder.addColumn(getMessageSource().getMessage("label_persona_grupo", null, "Grupo", locale), "grupo", Grupo.class.getName(), 100);
         }
         }
         catch (ColumnBuilderException e) {

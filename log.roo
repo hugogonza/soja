@@ -36,3 +36,16 @@ web mvc controller --all --pathPrefix /api
 focus --class ~.domain.Persona
 help field number
 // Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 13:27:49
+field boolean --fieldName conFitoquimicos --class ~.domain.Persona --column con_fitoquimicos
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 13:43:09
+enum type --class ~.Grupo
+enum type --class ~.Grupo
+enum type --class ~.Grupo
+enum constant --name CON_FITOQUIMICOS --class ~.Grupo
+enum constant --name SIN_FITOQUIMICOS --class ~.Grupo
+// [failed] field enum --fieldName grupo --type ~.Grupo --column grupo --enumType STRING
+// [failed] field enum --fieldName grupo --type ~.Grupo --column grupo --enumType STRING
+// [failed] field enum --fieldName grupo --type ~.Grupo --column grupo --enumType STRING
+// [failed] field enum --fieldName grupo --type ~.Grupo --column grupo --enumType STRING --force
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 13:46:44
+field enum --fieldName grupo --type ~.Grupo --column grupo --enumType STRING --class ~.domain.Persona

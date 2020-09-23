@@ -38,6 +38,12 @@ privileged aspect PersonaRepositoryImpl_Roo_Jpa_Repository_Impl {
     public static final String PersonaRepositoryImpl.FECHA_NACIMIENTO = "fechaNacimiento";
     
     /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String PersonaRepositoryImpl.GRUPO = "grupo";
+    
+    /**
      * TODO Auto-generated method documentation
      * 
      * @param globalSearch
@@ -50,13 +56,14 @@ privileged aspect PersonaRepositoryImpl_Roo_Jpa_Repository_Impl {
         
         JPQLQuery<Persona> query = from(persona);
         
-        Path<?>[] paths = new Path<?>[] {persona.alias,persona.genero,persona.fechaNacimiento};        
+        Path<?>[] paths = new Path<?>[] {persona.alias,persona.genero,persona.fechaNacimiento,persona.grupo};        
         applyGlobalSearch(globalSearch, query, paths);
         
         AttributeMappingBuilder mapping = buildMapper()
 			.map(ALIAS, persona.alias)
 			.map(GENERO, persona.genero)
-			.map(FECHA_NACIMIENTO, persona.fechaNacimiento);
+			.map(FECHA_NACIMIENTO, persona.fechaNacimiento)
+			.map(GRUPO, persona.grupo);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);
@@ -78,7 +85,7 @@ privileged aspect PersonaRepositoryImpl_Roo_Jpa_Repository_Impl {
         
         JPQLQuery<Persona> query = from(persona);
         
-        Path<?>[] paths = new Path<?>[] {persona.alias,persona.genero,persona.fechaNacimiento};        
+        Path<?>[] paths = new Path<?>[] {persona.alias,persona.genero,persona.fechaNacimiento,persona.grupo};        
         applyGlobalSearch(globalSearch, query, paths);
         
         // Also, filter by the provided ids
@@ -87,7 +94,8 @@ privileged aspect PersonaRepositoryImpl_Roo_Jpa_Repository_Impl {
         AttributeMappingBuilder mapping = buildMapper()
 			.map(ALIAS, persona.alias)
 			.map(GENERO, persona.genero)
-			.map(FECHA_NACIMIENTO, persona.fechaNacimiento);
+			.map(FECHA_NACIMIENTO, persona.fechaNacimiento)
+			.map(GRUPO, persona.grupo);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);

@@ -4,6 +4,7 @@
 package com.soja.web;
 
 import com.soja.Genero;
+import com.soja.Grupo;
 import com.soja.domain.Persona;
 import com.soja.service.api.PersonaService;
 import com.soja.web.PersonaeCollectionThymeleafController;
@@ -233,6 +234,7 @@ privileged aspect PersonaeItemThymeleafController_Roo_Thymeleaf {
     public void PersonaeItemThymeleafController.populateForm(Model model) {
         populateFormats(model);
         model.addAttribute("genero", Arrays.asList(Genero.values()));
+        model.addAttribute("grupo", Arrays.asList(Grupo.values()));
     }
     
     /**

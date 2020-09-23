@@ -22,6 +22,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import org.springframework.roo.addon.jpa.annotations.entity.JpaRelationType;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
+import com.soja.Grupo;
 
 /**
  * = Persona
@@ -86,4 +87,12 @@ public class Persona {
     @OneToMany(cascade = { javax.persistence.CascadeType.MERGE, javax.persistence.CascadeType.PERSIST }, fetch = FetchType.LAZY, mappedBy = "persona")
     @RooJpaRelation(type = JpaRelationType.AGGREGATION)
     private Set<LecturaComposicionCorporal> lecturaComposicionCorporal = new HashSet<LecturaComposicionCorporal>();
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @Column(name = "grupo")
+    @Enumerated(EnumType.STRING)
+    private Grupo grupo;
 }

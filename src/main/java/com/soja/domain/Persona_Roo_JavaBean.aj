@@ -4,6 +4,7 @@
 package com.soja.domain;
 
 import com.soja.Genero;
+import com.soja.Grupo;
 import com.soja.domain.LecturaComposicionCorporal;
 import com.soja.domain.Persona;
 import java.util.Calendar;
@@ -129,6 +130,26 @@ privileged aspect Persona_Roo_JavaBean {
      */
     public Persona Persona.setLecturaComposicionCorporal(Set<LecturaComposicionCorporal> lecturaComposicionCorporal) {
         this.lecturaComposicionCorporal = lecturaComposicionCorporal;
+        return this;
+    }
+    
+    /**
+     * Gets grupo value
+     * 
+     * @return Grupo
+     */
+    public Grupo Persona.getGrupo() {
+        return this.grupo;
+    }
+    
+    /**
+     * Sets grupo value
+     * 
+     * @param grupo
+     * @return Persona
+     */
+    public Persona Persona.setGrupo(Grupo grupo) {
+        this.grupo = grupo;
         return this;
     }
     
