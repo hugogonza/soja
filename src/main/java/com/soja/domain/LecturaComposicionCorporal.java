@@ -47,123 +47,11 @@ public class LecturaComposicionCorporal {
      * TODO Auto-generated attribute documentation
      *
      */
-    @Version
-    @Column(name = "VERSION")
-    private Long version;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
     @NotNull
-    @Column(name = "estatura")
-    @Digits(integer = 1, fraction = 2)
-    @NumberFormat
-    private BigDecimal estatura;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @NotNull
-    @Column(name = "peso")
-    @Digits(integer = 3, fraction = 2)
-    @NumberFormat
-    private BigDecimal peso;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @NotNull
-    @Column(name = "imc")
-    @Digits(integer = 2, fraction = 2)
-    @NumberFormat
-    private BigDecimal imc;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @NotNull
-    @Column(name = "porcentaje_masa_corporal")
-    @Min(0L)
-    @Max(100L)
-    @Digits(integer = 2, fraction = 2)
-    @NumberFormat
-    private BigDecimal porcentajeMasaCorporal;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @NotNull
-    @Column(name = "masa_magra")
-    @Digits(integer = 3, fraction = 2)
-    @NumberFormat
-    private BigDecimal masaMagra;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @NotNull
-    @Column(name = "porcentaje_agua_corporal")
-    @Min(0L)
-    @Max(100L)
-    @Digits(integer = 2, fraction = 2)
-    @NumberFormat
-    private BigDecimal porcentajeAguaCorporal;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @NotNull
-    @Column(name = "grasa_visceral")
-    @Digits(integer = 3, fraction = 2)
-    @NumberFormat
-    private Integer grasaVisceral;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @NotNull
-    @Column(name = "circunferencia_cintura")
-    @Digits(integer = 3, fraction = 2)
-    @NumberFormat
-    private BigDecimal circunferenciaCintura;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @NotNull
-    @Column(name = "circunferencia_cadera")
-    @Digits(integer = 3, fraction = 2)
-    @NumberFormat
-    private BigDecimal circunferenciaCadera;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @NotNull
-    @Column(name = "indice_cintura_cadera")
-    @Digits(integer = 3, fraction = 2)
-    @NumberFormat
-    private BigDecimal indiceCinturaCadera;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @NotNull
-    @Column(name = "circunferencia_muneca")
-    @Digits(integer = 2, fraction = 2)
-    @NumberFormat
-    private BigDecimal circunferenciaMuneca;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "persona_id")
+    @EntityFormat
+    private Persona persona;
 
     /**
      * TODO Auto-generated attribute documentation
@@ -179,9 +67,114 @@ public class LecturaComposicionCorporal {
      * TODO Auto-generated attribute documentation
      *
      */
+    @Version
+    @Column(name = "VERSION")
+    private Long version;
+
+
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "persona_id")
-    @EntityFormat
-    private Persona persona;
+    @Column(name = "estatura")
+    @Digits(integer = 1, fraction = 2)
+    
+    private BigDecimal estatura;
+
+    @NotNull
+    @Column(name = "peso")
+    @Digits(integer = 3, fraction = 2)
+    
+    private BigDecimal peso;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @Column(name = "imc")
+    @Digits(integer = 2, fraction = 2)
+    
+    private BigDecimal imc;
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @Column(name = "porcentaje_grasa_corporal")
+    @Min(0L)
+    @Max(100L)
+    @Digits(integer = 2, fraction = 2)
+    
+    private BigDecimal porcentajeGrasaCorporal;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @Column(name = "masa_magra")
+    @Digits(integer = 3, fraction = 2)
+    
+    private BigDecimal masaMagra;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @Column(name = "porcentaje_agua_corporal")
+    @Min(0L)
+    @Max(100L)
+    @Digits(integer = 2, fraction = 2)
+    
+    private BigDecimal porcentajeAguaCorporal;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @Column(name = "grasa_visceral")
+    
+    private Integer grasaVisceral;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @Column(name = "circunferencia_cintura")
+    @Digits(integer = 3, fraction = 2)
+    
+    private BigDecimal circunferenciaCintura;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @Column(name = "circunferencia_cadera")
+    @Digits(integer = 3, fraction = 2)
+    
+    private BigDecimal circunferenciaCadera;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @Column(name = "indice_cintura_cadera")
+    @Digits(integer = 3, fraction = 2)
+    
+    private BigDecimal indiceCinturaCadera;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @Column(name = "circunferencia_muneca")
+    @Digits(integer = 2, fraction = 2)
+    
+    private BigDecimal circunferenciaMuneca;
+
 }

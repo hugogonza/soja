@@ -5,10 +5,16 @@ package com.soja.config.jackson;
 
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.soja.config.jackson.DomainModelModule;
+import com.soja.domain.BiometriaHematica;
+import com.soja.domain.ExamenGeneralOrina;
 import com.soja.domain.LecturaComposicionCorporal;
 import com.soja.domain.Persona;
+import com.soja.domain.QuimicaSanguinea;
+import com.soja.web.BiometriaHematicaJsonMixin;
+import com.soja.web.ExamenGeneralOrinaJsonMixin;
 import com.soja.web.LecturaComposicionCorporalJsonMixin;
 import com.soja.web.PersonaJsonMixin;
+import com.soja.web.QuimicaSanguineaJsonMixin;
 import org.springframework.boot.jackson.JsonComponent;
 
 privileged aspect DomainModelModule_Roo_DomainModelModule {
@@ -24,8 +30,11 @@ privileged aspect DomainModelModule_Roo_DomainModelModule {
     public DomainModelModule.new() {
         // Mixin registration
         
+        setMixInAnnotation(BiometriaHematica.class, BiometriaHematicaJsonMixin.class);
+        setMixInAnnotation(ExamenGeneralOrina.class, ExamenGeneralOrinaJsonMixin.class);
         setMixInAnnotation(LecturaComposicionCorporal.class, LecturaComposicionCorporalJsonMixin.class);
         setMixInAnnotation(Persona.class, PersonaJsonMixin.class);
+        setMixInAnnotation(QuimicaSanguinea.class, QuimicaSanguineaJsonMixin.class);
     }
 
 }

@@ -5,8 +5,11 @@ package com.soja.domain;
 
 import com.soja.Genero;
 import com.soja.Grupo;
+import com.soja.domain.BiometriaHematica;
+import com.soja.domain.ExamenGeneralOrina;
 import com.soja.domain.LecturaComposicionCorporal;
 import com.soja.domain.Persona;
+import com.soja.domain.QuimicaSanguinea;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.Set;
@@ -114,6 +117,26 @@ privileged aspect Persona_Roo_JavaBean {
     }
     
     /**
+     * Gets grupo value
+     * 
+     * @return Grupo
+     */
+    public Grupo Persona.getGrupo() {
+        return this.grupo;
+    }
+    
+    /**
+     * Sets grupo value
+     * 
+     * @param grupo
+     * @return Persona
+     */
+    public Persona Persona.setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+        return this;
+    }
+    
+    /**
      * Gets lecturaComposicionCorporal value
      * 
      * @return Set
@@ -134,22 +157,62 @@ privileged aspect Persona_Roo_JavaBean {
     }
     
     /**
-     * Gets grupo value
+     * Gets quimicaSanguinea value
      * 
-     * @return Grupo
+     * @return Set
      */
-    public Grupo Persona.getGrupo() {
-        return this.grupo;
+    public Set<QuimicaSanguinea> Persona.getQuimicaSanguinea() {
+        return this.quimicaSanguinea;
     }
     
     /**
-     * Sets grupo value
+     * Sets quimicaSanguinea value
      * 
-     * @param grupo
+     * @param quimicaSanguinea
      * @return Persona
      */
-    public Persona Persona.setGrupo(Grupo grupo) {
-        this.grupo = grupo;
+    public Persona Persona.setQuimicaSanguinea(Set<QuimicaSanguinea> quimicaSanguinea) {
+        this.quimicaSanguinea = quimicaSanguinea;
+        return this;
+    }
+    
+    /**
+     * Gets examenGeneralOrina value
+     * 
+     * @return Set
+     */
+    public Set<ExamenGeneralOrina> Persona.getExamenGeneralOrina() {
+        return this.examenGeneralOrina;
+    }
+    
+    /**
+     * Sets examenGeneralOrina value
+     * 
+     * @param examenGeneralOrina
+     * @return Persona
+     */
+    public Persona Persona.setExamenGeneralOrina(Set<ExamenGeneralOrina> examenGeneralOrina) {
+        this.examenGeneralOrina = examenGeneralOrina;
+        return this;
+    }
+    
+    /**
+     * Gets biometriaHematica value
+     * 
+     * @return Set
+     */
+    public Set<BiometriaHematica> Persona.getBiometriaHematica() {
+        return this.biometriaHematica;
+    }
+    
+    /**
+     * Sets biometriaHematica value
+     * 
+     * @param biometriaHematica
+     * @return Persona
+     */
+    public Persona Persona.setBiometriaHematica(Set<BiometriaHematica> biometriaHematica) {
+        this.biometriaHematica = biometriaHematica;
         return this;
     }
     

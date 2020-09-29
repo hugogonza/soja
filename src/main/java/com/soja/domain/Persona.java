@@ -83,6 +83,14 @@ public class Persona {
      * TODO Auto-generated attribute documentation
      *
      */
+    @Column(name = "grupo")
+    @Enumerated(EnumType.STRING)
+    private Grupo grupo;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
     @NotNull
     @OneToMany(cascade = { javax.persistence.CascadeType.MERGE, javax.persistence.CascadeType.PERSIST }, fetch = FetchType.LAZY, mappedBy = "persona")
     @RooJpaRelation(type = JpaRelationType.AGGREGATION)
@@ -92,7 +100,26 @@ public class Persona {
      * TODO Auto-generated attribute documentation
      *
      */
-    @Column(name = "grupo")
-    @Enumerated(EnumType.STRING)
-    private Grupo grupo;
+    @NotNull
+    @OneToMany(cascade = { javax.persistence.CascadeType.MERGE, javax.persistence.CascadeType.PERSIST }, fetch = FetchType.LAZY, mappedBy = "persona")
+    @RooJpaRelation(type = JpaRelationType.AGGREGATION)
+    private Set<QuimicaSanguinea> quimicaSanguinea = new HashSet<QuimicaSanguinea>();
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @OneToMany(cascade = { javax.persistence.CascadeType.MERGE, javax.persistence.CascadeType.PERSIST }, fetch = FetchType.LAZY, mappedBy = "persona")
+    @RooJpaRelation(type = JpaRelationType.AGGREGATION)
+    private Set<ExamenGeneralOrina> examenGeneralOrina = new HashSet<ExamenGeneralOrina>();
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @NotNull
+    @OneToMany(cascade = { javax.persistence.CascadeType.MERGE, javax.persistence.CascadeType.PERSIST }, fetch = FetchType.LAZY, mappedBy = "persona")
+    @RooJpaRelation(type = JpaRelationType.AGGREGATION)
+    private Set<BiometriaHematica> biometriaHematica = new HashSet<BiometriaHematica>();
 }

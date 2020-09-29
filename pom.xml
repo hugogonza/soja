@@ -68,12 +68,12 @@
         </snapshots>
     </repository>
     <!-- Spring Roo repository -->
-    <repository>
-      <id>spring-roo-repository</id>
-      <name>Spring Roo Repository</name>
-      <url>https://repo.spring.io/spring-roo</url>
-    </repository>
-  </repositories>
+  <repository>
+            <id>spring-roo-repository</id>
+            <url>https://repo.spring.io/spring-roo</url>
+            <name>Spring Roo Repository</name>
+        </repository>
+    </repositories>
 
   <dependencyManagement>
     <dependencies>
@@ -476,6 +476,10 @@
         <dependency>
             <groupId>org.webjars.bower</groupId>
             <artifactId>ie10-viewport-bug-workaround</artifactId>
+        </dependency>
+    <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
         </dependency>
     </dependencies>
 

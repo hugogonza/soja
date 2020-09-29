@@ -518,6 +518,9 @@ privileged aspect LecturaComposicionCorporalsCollectionThymeleafController_Roo_T
         if (columnName.equals("id")) {
             builder.addColumn(getMessageSource().getMessage("label_lecturacomposicioncorporal_id", null, "Id", locale), "id", Long.class.getName(), 50);
         }
+        else if (columnName.equals("fechaHoraEvaluacion")) {
+            builder.addColumn(getMessageSource().getMessage("label_lecturacomposicioncorporal_fechahoraevaluacion", null, "Fecha Hora Evaluacion", locale), "fechaHoraEvaluacion", Calendar.class.getName(), 100);
+        }
         else if (columnName.equals("version")) {
             builder.addColumn(getMessageSource().getMessage("label_lecturacomposicioncorporal_version", null, "Version", locale), "version", Long.class.getName(), 100);
         }
@@ -530,8 +533,8 @@ privileged aspect LecturaComposicionCorporalsCollectionThymeleafController_Roo_T
         else if (columnName.equals("imc")) {
             builder.addColumn(getMessageSource().getMessage("label_lecturacomposicioncorporal_imc", null, "Imc", locale), "imc", BigDecimal.class.getName(), 100);
         }
-        else if (columnName.equals("porcentajeMasaCorporal")) {
-            builder.addColumn(getMessageSource().getMessage("label_lecturacomposicioncorporal_porcentajemasacorporal", null, "Porcentaje Masa Corporal", locale), "porcentajeMasaCorporal", BigDecimal.class.getName(), 100);
+        else if (columnName.equals("porcentajeGrasaCorporal")) {
+            builder.addColumn(getMessageSource().getMessage("label_lecturacomposicioncorporal_porcentajegrasacorporal", null, "Porcentaje Grasa Corporal", locale), "porcentajeGrasaCorporal", BigDecimal.class.getName(), 100);
         }
         else if (columnName.equals("masaMagra")) {
             builder.addColumn(getMessageSource().getMessage("label_lecturacomposicioncorporal_masamagra", null, "Masa Magra", locale), "masaMagra", BigDecimal.class.getName(), 100);
@@ -553,9 +556,6 @@ privileged aspect LecturaComposicionCorporalsCollectionThymeleafController_Roo_T
         }
         else if (columnName.equals("circunferenciaMuneca")) {
             builder.addColumn(getMessageSource().getMessage("label_lecturacomposicioncorporal_circunferenciamuneca", null, "Circunferencia Muneca", locale), "circunferenciaMuneca", BigDecimal.class.getName(), 100);
-        }
-        else if (columnName.equals("fechaHoraEvaluacion")) {
-            builder.addColumn(getMessageSource().getMessage("label_lecturacomposicioncorporal_fechahoraevaluacion", null, "Fecha Hora Evaluacion", locale), "fechaHoraEvaluacion", Calendar.class.getName(), 100);
         }
         }
         catch (ColumnBuilderException e) {

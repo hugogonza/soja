@@ -129,7 +129,7 @@
 									data-th-placeholder="#{label_lecturacomposicioncorporal_imc}"
 									data-toggle="tooltip" aria-describedby="imcStatus"
 									data-inputmask-alias="numeric" data-inputmask-integerdigits="2"
-									data-inputmask-digits="2" required="required" disabled /> <span
+									data-inputmask-digits="2" required="required"  readonly/> <span
 									data-th-classappend="${#fields.hasErrors('imc')}? 'glyphicon glyphicon-remove form-control-feedback'"
 									class="glyphicon glyphicon-remove form-control-feedback"
 									data-th-if="${#fields.hasErrors('imc')}" aria-hidden="true"></span>
@@ -139,30 +139,30 @@
 							</div>
 						</div>
 						<div class="form-group has-error has-feedback" data-z="36a3aec4"
-							id="lecturacomposicioncorporal-porcentajemasacorporal-field"
-							data-th-classappend="${#fields.hasErrors('porcentajeMasaCorporal')}? 'has-error has-feedback'"
+							id="lecturacomposicioncorporal-porcentajegrasacorporal-field"
+							data-th-classappend="${#fields.hasErrors('porcentajeGrasaCorporal')}? 'has-error has-feedback'"
 							data-th-class="form-group">
-							<label for="porcentajeMasaCorporal"
+							<label for="porcentajeGrasaCorporal"
 								class="col-md-3 control-label"
-								data-th-text="#{label_lecturacomposicioncorporal_porcentajemasacorporal}">porcentajeMasaCorporal</label>
+								data-th-text="#{label_lecturacomposicioncorporal_porcentajegrasacorporal}">porcentajeGrasaCorporal</label>
 							<div class="col-md-3">
-								<input id="porcentajeMasaCorporal" name="porcentajeMasaCorporal"
-									data-th-value="*{{porcentajeMasaCorporal}}" type="text"
+								<input id="porcentajeGrasaCorporal" name="porcentajeGrasaCorporal"
+									data-th-value="*{{porcentajeGrasaCorporal}}" type="text"
 									class="form-control inputmask"
-									placeholder="porcentajeMasaCorporal"
-									data-th-placeholder="#{label_lecturacomposicioncorporal_porcentajemasacorporal}"
+									placeholder="porcentajeGrasaCorporal"
+									data-th-placeholder="#{label_lecturacomposicioncorporal_porcentajegrasacorporal}"
 									data-toggle="tooltip"
-									aria-describedby="porcentajeMasaCorporalStatus"
+									aria-describedby="porcentajeGrasaCorporalStatus"
 									data-inputmask-alias="numeric" data-inputmask-integerdigits="2"
 									data-inputmask-digits="2" required="required" min="0" max="100" />
 								<span
-									data-th-classappend="${#fields.hasErrors('porcentajeMasaCorporal')}? 'glyphicon glyphicon-remove form-control-feedback'"
+									data-th-classappend="${#fields.hasErrors('porcentajeGrasaCorporal')}? 'glyphicon glyphicon-remove form-control-feedback'"
 									class="glyphicon glyphicon-remove form-control-feedback"
-									data-th-if="${#fields.hasErrors('porcentajeMasaCorporal')}"
+									data-th-if="${#fields.hasErrors('porcentajeGrasaCorporal')}"
 									aria-hidden="true"></span> <span
-									id="porcentajeMasaCorporal-error" class="help-block"
-									data-th-if="${#fields.hasErrors('porcentajeMasaCorporal')}"
-									data-th-errors="*{porcentajeMasaCorporal}">Error
+									id="porcentajeGrasaCorporal-error" class="help-block"
+									data-th-if="${#fields.hasErrors('porcentajeGrasaCorporal')}"
+									data-th-errors="*{porcentajeGrasaCorporal}">Error
 									message.</span>
 							</div>
 						</div>
@@ -307,7 +307,7 @@
 									data-toggle="tooltip"
 									aria-describedby="indiceCinturaCaderaStatus"
 									data-inputmask-alias="numeric" data-inputmask-integerdigits="3"
-									data-inputmask-digits="2" required="required" disabled/> <span
+									data-inputmask-digits="2" required="required" readonly/> <span
 									data-th-classappend="${#fields.hasErrors('indiceCinturaCadera')}? 'glyphicon glyphicon-remove form-control-feedback'"
 									class="glyphicon glyphicon-remove form-control-feedback"
 									data-th-if="${#fields.hasErrors('indiceCinturaCadera')}"
@@ -429,7 +429,7 @@
 												},
 												'currency' : {
 													'prefix' : /*[[#{label_inputmask_prefix}]]*/'',
-													'suffix' : /*[[#{label_inputmask_suffix}]]*/' â‚¬'
+													'suffix' : /*[[#{label_inputmask_suffix}]]*/' €'
 												}
 											});
 								});

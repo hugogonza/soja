@@ -3,20 +3,20 @@
     <table id="lecturacomposicioncorporal-entity-table-item-to-remove" data-data-load-url="${collectionLink.to('datatablesByIdsIn')}">
       <thead>
         <tr>
+          <th data-data="persona" data-th-text="#{label_lecturacomposicioncorporal_persona}">persona</th>
+          <th data-data="fechaHoraEvaluacion" data-th-text="#{label_lecturacomposicioncorporal_fechahoraevaluacion}">fechaHoraEvaluacion</th>
           <th data-data="estatura" data-th-text="#{label_lecturacomposicioncorporal_estatura}">estatura</th>
           <th data-data="peso" data-th-text="#{label_lecturacomposicioncorporal_peso}">peso</th>
           <th data-data="imc" data-th-text="#{label_lecturacomposicioncorporal_imc}">imc</th>
-          <th data-data="porcentajeMasaCorporal" data-th-text="#{label_lecturacomposicioncorporal_porcentajemasacorporal}">porcentajeMasaCorporal</th>
-          <th data-data="masaMagra" data-th-text="#{label_lecturacomposicioncorporal_masamagra}">masaMagra</th>
         </tr>
       </thead>
       <tbody data-th-remove="all">
         <tr>
+          <td>persona</td>
+          <td>fechaHoraEvaluacion</td>
           <td>estatura</td>
           <td>peso</td>
           <td>imc</td>
-          <td>porcentajeMasaCorporal</td>
-          <td>masaMagra</td>
         </tr>
       </tbody>
     </table>

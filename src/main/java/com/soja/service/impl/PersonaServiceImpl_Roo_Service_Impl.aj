@@ -3,10 +3,16 @@
 
 package com.soja.service.impl;
 
+import com.soja.domain.BiometriaHematica;
+import com.soja.domain.ExamenGeneralOrina;
 import com.soja.domain.LecturaComposicionCorporal;
 import com.soja.domain.Persona;
+import com.soja.domain.QuimicaSanguinea;
 import com.soja.repository.PersonaRepository;
+import com.soja.service.api.BiometriaHematicaService;
+import com.soja.service.api.ExamenGeneralOrinaService;
 import com.soja.service.api.LecturaComposicionCorporalService;
+import com.soja.service.api.QuimicaSanguineaService;
 import com.soja.service.impl.PersonaServiceImpl;
 import io.springlets.data.domain.GlobalSearch;
 import io.springlets.data.web.validation.MessageI18n;
@@ -38,18 +44,42 @@ privileged aspect PersonaServiceImpl_Roo_Service_Impl {
      * TODO Auto-generated attribute documentation
      * 
      */
+    private BiometriaHematicaService PersonaServiceImpl.biometriaHematicaService;
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    private ExamenGeneralOrinaService PersonaServiceImpl.examenGeneralOrinaService;
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
     private LecturaComposicionCorporalService PersonaServiceImpl.lecturaComposicionCorporalService;
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    private QuimicaSanguineaService PersonaServiceImpl.quimicaSanguineaService;
     
     /**
      * TODO Auto-generated constructor documentation
      * 
      * @param personaRepository
+     * @param biometriaHematicaService
+     * @param examenGeneralOrinaService
      * @param lecturaComposicionCorporalService
+     * @param quimicaSanguineaService
      */
     @Autowired
-    public PersonaServiceImpl.new(PersonaRepository personaRepository, @Lazy LecturaComposicionCorporalService lecturaComposicionCorporalService) {
+    public PersonaServiceImpl.new(PersonaRepository personaRepository, @Lazy BiometriaHematicaService biometriaHematicaService, @Lazy ExamenGeneralOrinaService examenGeneralOrinaService, @Lazy LecturaComposicionCorporalService lecturaComposicionCorporalService, @Lazy QuimicaSanguineaService quimicaSanguineaService) {
         setPersonaRepository(personaRepository);
+        setBiometriaHematicaService(biometriaHematicaService);
+        setExamenGeneralOrinaService(examenGeneralOrinaService);
         setLecturaComposicionCorporalService(lecturaComposicionCorporalService);
+        setQuimicaSanguineaService(quimicaSanguineaService);
     }
 
     /**
@@ -73,6 +103,42 @@ privileged aspect PersonaServiceImpl_Roo_Service_Impl {
     /**
      * TODO Auto-generated method documentation
      * 
+     * @return BiometriaHematicaService
+     */
+    public BiometriaHematicaService PersonaServiceImpl.getBiometriaHematicaService() {
+        return biometriaHematicaService;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param biometriaHematicaService
+     */
+    public void PersonaServiceImpl.setBiometriaHematicaService(BiometriaHematicaService biometriaHematicaService) {
+        this.biometriaHematicaService = biometriaHematicaService;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @return ExamenGeneralOrinaService
+     */
+    public ExamenGeneralOrinaService PersonaServiceImpl.getExamenGeneralOrinaService() {
+        return examenGeneralOrinaService;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param examenGeneralOrinaService
+     */
+    public void PersonaServiceImpl.setExamenGeneralOrinaService(ExamenGeneralOrinaService examenGeneralOrinaService) {
+        this.examenGeneralOrinaService = examenGeneralOrinaService;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
      * @return LecturaComposicionCorporalService
      */
     public LecturaComposicionCorporalService PersonaServiceImpl.getLecturaComposicionCorporalService() {
@@ -86,6 +152,24 @@ privileged aspect PersonaServiceImpl_Roo_Service_Impl {
      */
     public void PersonaServiceImpl.setLecturaComposicionCorporalService(LecturaComposicionCorporalService lecturaComposicionCorporalService) {
         this.lecturaComposicionCorporalService = lecturaComposicionCorporalService;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @return QuimicaSanguineaService
+     */
+    public QuimicaSanguineaService PersonaServiceImpl.getQuimicaSanguineaService() {
+        return quimicaSanguineaService;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param quimicaSanguineaService
+     */
+    public void PersonaServiceImpl.setQuimicaSanguineaService(QuimicaSanguineaService quimicaSanguineaService) {
+        this.quimicaSanguineaService = quimicaSanguineaService;
     }
     
     /**
@@ -106,6 +190,34 @@ privileged aspect PersonaServiceImpl_Roo_Service_Impl {
      * TODO Auto-generated method documentation
      * 
      * @param persona
+     * @param biometriaHematicaToAdd
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.addToBiometriaHematica(Persona persona, Iterable<Long> biometriaHematicaToAdd) {
+        List<BiometriaHematica> biometriaHematica = getBiometriaHematicaService().findAll(biometriaHematicaToAdd);
+        persona.addToBiometriaHematica(biometriaHematica);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param examenGeneralOrinaToAdd
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.addToExamenGeneralOrina(Persona persona, Iterable<Long> examenGeneralOrinaToAdd) {
+        List<ExamenGeneralOrina> examenGeneralOrina = getExamenGeneralOrinaService().findAll(examenGeneralOrinaToAdd);
+        persona.addToExamenGeneralOrina(examenGeneralOrina);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
      * @param lecturaComposicionCorporalToAdd
      * @return Persona
      */
@@ -120,6 +232,48 @@ privileged aspect PersonaServiceImpl_Roo_Service_Impl {
      * TODO Auto-generated method documentation
      * 
      * @param persona
+     * @param quimicaSanguineaToAdd
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.addToQuimicaSanguinea(Persona persona, Iterable<Long> quimicaSanguineaToAdd) {
+        List<QuimicaSanguinea> quimicaSanguinea = getQuimicaSanguineaService().findAll(quimicaSanguineaToAdd);
+        persona.addToQuimicaSanguinea(quimicaSanguinea);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param biometriaHematicaToRemove
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.removeFromBiometriaHematica(Persona persona, Iterable<Long> biometriaHematicaToRemove) {
+        List<BiometriaHematica> biometriaHematica = getBiometriaHematicaService().findAll(biometriaHematicaToRemove);
+        persona.removeFromBiometriaHematica(biometriaHematica);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param examenGeneralOrinaToRemove
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.removeFromExamenGeneralOrina(Persona persona, Iterable<Long> examenGeneralOrinaToRemove) {
+        List<ExamenGeneralOrina> examenGeneralOrina = getExamenGeneralOrinaService().findAll(examenGeneralOrinaToRemove);
+        persona.removeFromExamenGeneralOrina(examenGeneralOrina);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
      * @param lecturaComposicionCorporalToRemove
      * @return Persona
      */
@@ -127,6 +281,76 @@ privileged aspect PersonaServiceImpl_Roo_Service_Impl {
     public Persona PersonaServiceImpl.removeFromLecturaComposicionCorporal(Persona persona, Iterable<Long> lecturaComposicionCorporalToRemove) {
         List<LecturaComposicionCorporal> lecturaComposicionCorporal = getLecturaComposicionCorporalService().findAll(lecturaComposicionCorporalToRemove);
         persona.removeFromLecturaComposicionCorporal(lecturaComposicionCorporal);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param quimicaSanguineaToRemove
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.removeFromQuimicaSanguinea(Persona persona, Iterable<Long> quimicaSanguineaToRemove) {
+        List<QuimicaSanguinea> quimicaSanguinea = getQuimicaSanguineaService().findAll(quimicaSanguineaToRemove);
+        persona.removeFromQuimicaSanguinea(quimicaSanguinea);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param biometriaHematica
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.setBiometriaHematica(Persona persona, Iterable<Long> biometriaHematica) {
+        List<BiometriaHematica> items = getBiometriaHematicaService().findAll(biometriaHematica);
+        Set<BiometriaHematica> currents = persona.getBiometriaHematica();
+        Set<BiometriaHematica> toRemove = new HashSet<BiometriaHematica>();
+        for (Iterator<BiometriaHematica> iterator = currents.iterator(); iterator.hasNext();) {
+            BiometriaHematica nextBiometriaHematica = iterator.next();
+            if (items.contains(nextBiometriaHematica)) {
+                items.remove(nextBiometriaHematica);
+            } else {
+                toRemove.add(nextBiometriaHematica);
+            }
+        }
+        persona.removeFromBiometriaHematica(toRemove);
+        persona.addToBiometriaHematica(items);
+        // Force the version update of the parent side to know that the parent has changed
+        // because it has new books assigned
+        persona.setVersion(persona.getVersion() + 1);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param examenGeneralOrina
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.setExamenGeneralOrina(Persona persona, Iterable<Long> examenGeneralOrina) {
+        List<ExamenGeneralOrina> items = getExamenGeneralOrinaService().findAll(examenGeneralOrina);
+        Set<ExamenGeneralOrina> currents = persona.getExamenGeneralOrina();
+        Set<ExamenGeneralOrina> toRemove = new HashSet<ExamenGeneralOrina>();
+        for (Iterator<ExamenGeneralOrina> iterator = currents.iterator(); iterator.hasNext();) {
+            ExamenGeneralOrina nextExamenGeneralOrina = iterator.next();
+            if (items.contains(nextExamenGeneralOrina)) {
+                items.remove(nextExamenGeneralOrina);
+            } else {
+                toRemove.add(nextExamenGeneralOrina);
+            }
+        }
+        persona.removeFromExamenGeneralOrina(toRemove);
+        persona.addToExamenGeneralOrina(items);
+        // Force the version update of the parent side to know that the parent has changed
+        // because it has new books assigned
+        persona.setVersion(persona.getVersion() + 1);
         return getPersonaRepository().save(persona);
     }
     
@@ -162,11 +386,54 @@ privileged aspect PersonaServiceImpl_Roo_Service_Impl {
      * TODO Auto-generated method documentation
      * 
      * @param persona
+     * @param quimicaSanguinea
+     * @return Persona
+     */
+    @Transactional
+    public Persona PersonaServiceImpl.setQuimicaSanguinea(Persona persona, Iterable<Long> quimicaSanguinea) {
+        List<QuimicaSanguinea> items = getQuimicaSanguineaService().findAll(quimicaSanguinea);
+        Set<QuimicaSanguinea> currents = persona.getQuimicaSanguinea();
+        Set<QuimicaSanguinea> toRemove = new HashSet<QuimicaSanguinea>();
+        for (Iterator<QuimicaSanguinea> iterator = currents.iterator(); iterator.hasNext();) {
+            QuimicaSanguinea nextQuimicaSanguinea = iterator.next();
+            if (items.contains(nextQuimicaSanguinea)) {
+                items.remove(nextQuimicaSanguinea);
+            } else {
+                toRemove.add(nextQuimicaSanguinea);
+            }
+        }
+        persona.removeFromQuimicaSanguinea(toRemove);
+        persona.addToQuimicaSanguinea(items);
+        // Force the version update of the parent side to know that the parent has changed
+        // because it has new books assigned
+        persona.setVersion(persona.getVersion() + 1);
+        return getPersonaRepository().save(persona);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
      */
     @Transactional
     public void PersonaServiceImpl.delete(Persona persona) {
+        // Clear bidirectional one-to-many parent relationship with BiometriaHematica
+        for (BiometriaHematica item : persona.getBiometriaHematica()) {
+            item.setPersona(null);
+        }
+        
+        // Clear bidirectional one-to-many parent relationship with ExamenGeneralOrina
+        for (ExamenGeneralOrina item : persona.getExamenGeneralOrina()) {
+            item.setPersona(null);
+        }
+        
         // Clear bidirectional one-to-many parent relationship with LecturaComposicionCorporal
         for (LecturaComposicionCorporal item : persona.getLecturaComposicionCorporal()) {
+            item.setPersona(null);
+        }
+        
+        // Clear bidirectional one-to-many parent relationship with QuimicaSanguinea
+        for (QuimicaSanguinea item : persona.getQuimicaSanguinea()) {
             item.setPersona(null);
         }
         

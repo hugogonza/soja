@@ -32,6 +32,46 @@ privileged aspect LecturaComposicionCorporal_Roo_JavaBean {
     }
     
     /**
+     * Gets persona value
+     * 
+     * @return Persona
+     */
+    public Persona LecturaComposicionCorporal.getPersona() {
+        return this.persona;
+    }
+    
+    /**
+     * Sets persona value
+     * 
+     * @param persona
+     * @return LecturaComposicionCorporal
+     */
+    public LecturaComposicionCorporal LecturaComposicionCorporal.setPersona(Persona persona) {
+        this.persona = persona;
+        return this;
+    }
+    
+    /**
+     * Gets fechaHoraEvaluacion value
+     * 
+     * @return Calendar
+     */
+    public Calendar LecturaComposicionCorporal.getFechaHoraEvaluacion() {
+        return this.fechaHoraEvaluacion;
+    }
+    
+    /**
+     * Sets fechaHoraEvaluacion value
+     * 
+     * @param fechaHoraEvaluacion
+     * @return LecturaComposicionCorporal
+     */
+    public LecturaComposicionCorporal LecturaComposicionCorporal.setFechaHoraEvaluacion(Calendar fechaHoraEvaluacion) {
+        this.fechaHoraEvaluacion = fechaHoraEvaluacion;
+        return this;
+    }
+    
+    /**
      * Gets version value
      * 
      * @return Long
@@ -112,22 +152,22 @@ privileged aspect LecturaComposicionCorporal_Roo_JavaBean {
     }
     
     /**
-     * Gets porcentajeMasaCorporal value
+     * Gets porcentajeGrasaCorporal value
      * 
      * @return BigDecimal
      */
-    public BigDecimal LecturaComposicionCorporal.getPorcentajeMasaCorporal() {
-        return this.porcentajeMasaCorporal;
+    public BigDecimal LecturaComposicionCorporal.getPorcentajeGrasaCorporal() {
+        return this.porcentajeGrasaCorporal;
     }
     
     /**
-     * Sets porcentajeMasaCorporal value
+     * Sets porcentajeGrasaCorporal value
      * 
-     * @param porcentajeMasaCorporal
+     * @param porcentajeGrasaCorporal
      * @return LecturaComposicionCorporal
      */
-    public LecturaComposicionCorporal LecturaComposicionCorporal.setPorcentajeMasaCorporal(BigDecimal porcentajeMasaCorporal) {
-        this.porcentajeMasaCorporal = porcentajeMasaCorporal;
+    public LecturaComposicionCorporal LecturaComposicionCorporal.setPorcentajeGrasaCorporal(BigDecimal porcentajeGrasaCorporal) {
+        this.porcentajeGrasaCorporal = porcentajeGrasaCorporal;
         return this;
     }
     
@@ -272,46 +312,6 @@ privileged aspect LecturaComposicionCorporal_Roo_JavaBean {
     }
     
     /**
-     * Gets fechaHoraEvaluacion value
-     * 
-     * @return Calendar
-     */
-    public Calendar LecturaComposicionCorporal.getFechaHoraEvaluacion() {
-        return this.fechaHoraEvaluacion;
-    }
-    
-    /**
-     * Sets fechaHoraEvaluacion value
-     * 
-     * @param fechaHoraEvaluacion
-     * @return LecturaComposicionCorporal
-     */
-    public LecturaComposicionCorporal LecturaComposicionCorporal.setFechaHoraEvaluacion(Calendar fechaHoraEvaluacion) {
-        this.fechaHoraEvaluacion = fechaHoraEvaluacion;
-        return this;
-    }
-    
-    /**
-     * Gets persona value
-     * 
-     * @return Persona
-     */
-    public Persona LecturaComposicionCorporal.getPersona() {
-        return this.persona;
-    }
-    
-    /**
-     * Sets persona value
-     * 
-     * @param persona
-     * @return LecturaComposicionCorporal
-     */
-    public LecturaComposicionCorporal LecturaComposicionCorporal.setPersona(Persona persona) {
-        this.persona = persona;
-        return this;
-    }
-    
-    /**
      * This `equals` implementation is specific for JPA entities and uses 
      * the entity identifier for it, following the article in 
      * https://vladmihalcea.com/2016/06/06/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
@@ -349,19 +349,19 @@ privileged aspect LecturaComposicionCorporal_Roo_JavaBean {
     public String LecturaComposicionCorporal.toString() {
         return "LecturaComposicionCorporal {" + 
                 "id='" + id + '\'' + 
+                ", fechaHoraEvaluacion='" + fechaHoraEvaluacion == null ? null : java.text.DateFormat.getDateTimeInstance().format(fechaHoraEvaluacion.getTime()) + '\'' + 
                 ", version='" + version + '\'' + 
                 ", estatura='" + estatura + '\'' + 
                 ", peso='" + peso + '\'' + 
                 ", imc='" + imc + '\'' + 
-                ", porcentajeMasaCorporal='" + porcentajeMasaCorporal + '\'' + 
+                ", porcentajeGrasaCorporal='" + porcentajeGrasaCorporal + '\'' + 
                 ", masaMagra='" + masaMagra + '\'' + 
                 ", porcentajeAguaCorporal='" + porcentajeAguaCorporal + '\'' + 
                 ", grasaVisceral='" + grasaVisceral + '\'' + 
                 ", circunferenciaCintura='" + circunferenciaCintura + '\'' + 
                 ", circunferenciaCadera='" + circunferenciaCadera + '\'' + 
                 ", indiceCinturaCadera='" + indiceCinturaCadera + '\'' + 
-                ", circunferenciaMuneca='" + circunferenciaMuneca + '\'' + 
-                ", fechaHoraEvaluacion='" + fechaHoraEvaluacion == null ? null : java.text.DateFormat.getDateTimeInstance().format(fechaHoraEvaluacion.getTime()) + '\'' + "}" + super.toString();
+                ", circunferenciaMuneca='" + circunferenciaMuneca + '\'' + "}" + super.toString();
     }
     
 }

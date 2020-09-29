@@ -42,6 +42,24 @@
              <fieldset id="containerFields">
               <legend class="sr-only" data-th-text="#{label_data_entity(#{label_lecturacomposicioncorporal})}">LecturaComposicionCorporal data </legend>
 
+<div class="form-group has-error has-feedback" data-z="dc6843fa" id="lecturacomposicioncorporal-persona-field" data-th-classappend="${#fields.hasErrors('persona')}? 'has-error has-feedback'" data-th-class="form-group" data-th-with="collectionLink=${@linkBuilder.of('PersonaeCollectionThymeleafController')}">
+    <label for="persona" class="col-md-3 control-label" data-th-text="#{label_lecturacomposicioncorporal_persona}">Persona</label>
+    <div class="col-md-6">
+      <!-- Select2 -->
+      <select data-th-field="*{persona}" class="form-control dropdown-select-ajax" data-allow-clear="false" data-data-ajax--url="${collectionLink.to('select2')}" data-ajax--cache="true" data-ajax--delay="250" data-ajax--data-type="json" required="required" data-data-placeholder="#{info_select_an_option}">
+          <option data-th-unless="*{persona} == null" data-th-value="*{persona.id}" data-th-text="*{{persona}}" selected="selected">Persona</option>
+      </select>
+      <span data-th-classappend="${#fields.hasErrors('persona')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('persona')}" aria-hidden="true"></span>
+      <span id="persona-error" class="help-block" data-th-if="${#fields.hasErrors('persona')}" data-th-errors="*{persona}">Error message.</span>
+    </div>
+</div>
+<div class="form-group has-error has-feedback" id="lecturacomposicioncorporal-fechahoraevaluacion-field" data-z="9b1dd3a" data-th-classappend="${#fields.hasErrors('fechaHoraEvaluacion')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="fechaHoraEvaluacion" class="col-md-3 control-label" data-th-text="#{label_lecturacomposicioncorporal_fechahoraevaluacion}">fechaHoraEvaluacion</label>
+  <div class="col-md-3">
+    <input id="fechaHoraEvaluacion" name="fechaHoraEvaluacion" data-th-value="*{{fechaHoraEvaluacion}}" type="text" class="form-control datetimepicker" placeholder="fechaHoraEvaluacion" data-th-placeholder="#{label_lecturacomposicioncorporal_fechahoraevaluacion}" data-th-attr="data-dateformat=${fechaHoraEvaluacion_date_format}" data-toggle="tooltip" required="required" /> <span data-th-classappend="${#fields.hasErrors('fechaHoraEvaluacion')}? 'glyphicon glyphicon-remove form-control-feedback'" data-th-if="${#fields.hasErrors('fechaHoraEvaluacion')}" aria-hidden="true"></span>
+     <span id="fechaHoraEvaluacion-error" class="help-block" data-th-if="${#fields.hasErrors('fechaHoraEvaluacion')}" data-th-errors="*{fechaHoraEvaluacion}">Error message.</span>
+  </div>
+</div>
 <div class="form-group has-error has-feedback" data-z="86ddd44" id="lecturacomposicioncorporal-estatura-field" data-th-classappend="${#fields.hasErrors('estatura')}? 'has-error has-feedback'" data-th-class="form-group">
   <label for="estatura" class="col-md-3 control-label" data-th-text="#{label_lecturacomposicioncorporal_estatura}">estatura</label>
   <div class="col-md-3">
@@ -66,12 +84,12 @@
       <span id="imc-error" class="help-block" data-th-if="${#fields.hasErrors('imc')}" data-th-errors="*{imc}">Error message.</span>
   </div>
 </div>
-<div class="form-group has-error has-feedback" data-z="36a3aec4" id="lecturacomposicioncorporal-porcentajemasacorporal-field" data-th-classappend="${#fields.hasErrors('porcentajeMasaCorporal')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="porcentajeMasaCorporal" class="col-md-3 control-label" data-th-text="#{label_lecturacomposicioncorporal_porcentajemasacorporal}">porcentajeMasaCorporal</label>
+<div class="form-group has-error has-feedback" data-z="d282ac1a" id="lecturacomposicioncorporal-porcentajegrasacorporal-field" data-th-classappend="${#fields.hasErrors('porcentajeGrasaCorporal')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="porcentajeGrasaCorporal" class="col-md-3 control-label" data-th-text="#{label_lecturacomposicioncorporal_porcentajegrasacorporal}">porcentajeGrasaCorporal</label>
   <div class="col-md-3">
-    <input id="porcentajeMasaCorporal" name="porcentajeMasaCorporal" data-th-value="*{{porcentajeMasaCorporal}}" type="text" class="form-control inputmask" placeholder="porcentajeMasaCorporal" data-th-placeholder="#{label_lecturacomposicioncorporal_porcentajemasacorporal}" data-toggle="tooltip" aria-describedby="porcentajeMasaCorporalStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="100" />
-      <span data-th-classappend="${#fields.hasErrors('porcentajeMasaCorporal')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('porcentajeMasaCorporal')}" aria-hidden="true"></span>
-      <span id="porcentajeMasaCorporal-error" class="help-block" data-th-if="${#fields.hasErrors('porcentajeMasaCorporal')}" data-th-errors="*{porcentajeMasaCorporal}">Error message.</span>
+    <input id="porcentajeGrasaCorporal" name="porcentajeGrasaCorporal" data-th-value="*{{porcentajeGrasaCorporal}}" type="text" class="form-control inputmask" placeholder="porcentajeGrasaCorporal" data-th-placeholder="#{label_lecturacomposicioncorporal_porcentajegrasacorporal}" data-toggle="tooltip" aria-describedby="porcentajeGrasaCorporalStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="100" />
+      <span data-th-classappend="${#fields.hasErrors('porcentajeGrasaCorporal')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('porcentajeGrasaCorporal')}" aria-hidden="true"></span>
+      <span id="porcentajeGrasaCorporal-error" class="help-block" data-th-if="${#fields.hasErrors('porcentajeGrasaCorporal')}" data-th-errors="*{porcentajeGrasaCorporal}">Error message.</span>
   </div>
 </div>
 <div class="form-group has-error has-feedback" data-z="79bba29a" id="lecturacomposicioncorporal-masamagra-field" data-th-classappend="${#fields.hasErrors('masaMagra')}? 'has-error has-feedback'" data-th-class="form-group">
@@ -93,7 +111,7 @@
 <div class="form-group has-error has-feedback" data-z="6665a17a" id="lecturacomposicioncorporal-grasavisceral-field" data-th-classappend="${#fields.hasErrors('grasaVisceral')}? 'has-error has-feedback'" data-th-class="form-group">
   <label for="grasaVisceral" class="col-md-3 control-label" data-th-text="#{label_lecturacomposicioncorporal_grasavisceral}">grasaVisceral</label>
   <div class="col-md-3">
-    <input id="grasaVisceral" name="grasaVisceral" data-th-value="*{{grasaVisceral}}" type="text" class="form-control inputmask" placeholder="grasaVisceral" data-th-placeholder="#{label_lecturacomposicioncorporal_grasavisceral}" data-toggle="tooltip" aria-describedby="grasaVisceralStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="3" data-inputmask-digits="2" required="required" />
+    <input id="grasaVisceral" name="grasaVisceral" data-th-value="*{{grasaVisceral}}" type="text" class="form-control inputmask" placeholder="grasaVisceral" data-th-placeholder="#{label_lecturacomposicioncorporal_grasavisceral}" data-toggle="tooltip" aria-describedby="grasaVisceralStatus" data-inputmask-alias="numeric" data-inputmask-digits="0" required="required" />
       <span data-th-classappend="${#fields.hasErrors('grasaVisceral')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('grasaVisceral')}" aria-hidden="true"></span>
       <span id="grasaVisceral-error" class="help-block" data-th-if="${#fields.hasErrors('grasaVisceral')}" data-th-errors="*{grasaVisceral}">Error message.</span>
   </div>
@@ -129,24 +147,6 @@
       <span data-th-classappend="${#fields.hasErrors('circunferenciaMuneca')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('circunferenciaMuneca')}" aria-hidden="true"></span>
       <span id="circunferenciaMuneca-error" class="help-block" data-th-if="${#fields.hasErrors('circunferenciaMuneca')}" data-th-errors="*{circunferenciaMuneca}">Error message.</span>
   </div>
-</div>
-<div class="form-group has-error has-feedback" id="lecturacomposicioncorporal-fechahoraevaluacion-field" data-z="9b1dd3a" data-th-classappend="${#fields.hasErrors('fechaHoraEvaluacion')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="fechaHoraEvaluacion" class="col-md-3 control-label" data-th-text="#{label_lecturacomposicioncorporal_fechahoraevaluacion}">fechaHoraEvaluacion</label>
-  <div class="col-md-3">
-    <input id="fechaHoraEvaluacion" name="fechaHoraEvaluacion" data-th-value="*{{fechaHoraEvaluacion}}" type="text" class="form-control datetimepicker" placeholder="fechaHoraEvaluacion" data-th-placeholder="#{label_lecturacomposicioncorporal_fechahoraevaluacion}" data-th-attr="data-dateformat=${fechaHoraEvaluacion_date_format}" data-toggle="tooltip" required="required" /> <span data-th-classappend="${#fields.hasErrors('fechaHoraEvaluacion')}? 'glyphicon glyphicon-remove form-control-feedback'" data-th-if="${#fields.hasErrors('fechaHoraEvaluacion')}" aria-hidden="true"></span>
-     <span id="fechaHoraEvaluacion-error" class="help-block" data-th-if="${#fields.hasErrors('fechaHoraEvaluacion')}" data-th-errors="*{fechaHoraEvaluacion}">Error message.</span>
-  </div>
-</div>
-<div class="form-group has-error has-feedback" data-z="dc6843fa" id="lecturacomposicioncorporal-persona-field" data-th-classappend="${#fields.hasErrors('persona')}? 'has-error has-feedback'" data-th-class="form-group" data-th-with="collectionLink=${@linkBuilder.of('PersonaeCollectionThymeleafController')}">
-    <label for="persona" class="col-md-3 control-label" data-th-text="#{label_lecturacomposicioncorporal_persona}">Persona</label>
-    <div class="col-md-6">
-      <!-- Select2 -->
-      <select data-th-field="*{persona}" class="form-control dropdown-select-ajax" data-allow-clear="false" data-data-ajax--url="${collectionLink.to('select2')}" data-ajax--cache="true" data-ajax--delay="250" data-ajax--data-type="json" required="required" data-data-placeholder="#{info_select_an_option}">
-          <option data-th-unless="*{persona} == null" data-th-value="*{persona.id}" data-th-text="*{{persona}}" selected="selected">Persona</option>
-      </select>
-      <span data-th-classappend="${#fields.hasErrors('persona')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('persona')}" aria-hidden="true"></span>
-      <span id="persona-error" class="help-block" data-th-if="${#fields.hasErrors('persona')}" data-th-errors="*{persona}">Error message.</span>
-    </div>
 </div>
              </fieldset>
 

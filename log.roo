@@ -14,7 +14,7 @@ focus --class ~.domain.LecturaComposicionCorporal
 field number --fieldName estatura --type java.math.BigDecimal --column estatura --notNull --digitsInteger 1 --digitsFraction 2
 field number --fieldName peso --type java.math.BigDecimal --column peso --notNull --digitsInteger 3 --digitsFraction 2
 field number --fieldName imc --type java.math.BigDecimal --column imc --notNull --digitsInteger 2 --digitsFraction 2
-field number --fieldName porcentajeMasaCorporal --type java.math.BigDecimal --column porcentaje_masa_corporal --notNull --min 0 --max 100 --digitsInteger 2 --digitsFraction 2
+field number --fieldName porcentajeGrasaCorporal --type java.math.BigDecimal --column porcentaje_grasa_corporal --notNull --min 0 --max 100 --digitsInteger 2 --digitsFraction 2
 field number --fieldName masaMagra --type java.math.BigDecimal --column masa_magra --notNull --digitsInteger 3 --digitsFraction 2
 field number --fieldName porcentajeAguaCorporal --type java.math.BigDecimal --column porcentaje_agua_corporal --notNull --min 0 --max 100 --digitsInteger 2 --digitsFraction 2
 field number --fieldName grasaVisceral --type java.lang.Integer --column grasa_visceral --notNull --digitsInteger 3 --digitsFraction 2
@@ -49,3 +49,121 @@ enum constant --name SIN_FITOQUIMICOS --class ~.Grupo
 // [failed] field enum --fieldName grupo --type ~.Grupo --column grupo --enumType STRING --force
 // Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 13:46:44
 field enum --fieldName grupo --type ~.Grupo --column grupo --enumType STRING --class ~.domain.Persona
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 20:00:40
+entity jpa --class ~.domain.QuimicaSanguinea --table quimica_sanguinea --identifierColumn quimica_sanguinea_id --versionField version --versionType java.lang.Long --versionColumn VERSION
+field number --fieldName glucosa --type java.math.BigDecimal --column glucosa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2
+// [failed] field number --fieldName glucosa --type java.math.BigDecimal --column glucosa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "70 a 110 mg/dl"
+field number --fieldName glucosa --type java.math.BigDecimal --column glucosa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "70 a 110 mg/dl" --force
+field number --fieldName glucosa --type java.math.BigDecimal --column glucosa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "70 a 110 mg/dl" --force
+field number --fieldName glucosa --type java.math.BigDecimal --column glucosa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "70 a 110 mg/dl" --force
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 20:14:47
+focus --class ~.domain.LecturaComposicionCorporal
+field number --fieldName glucosa --type java.math.BigDecimal --column glucosa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "70 a 110 mg/dl" --force
+field number --fieldName glucosa --type java.math.BigDecimal --column glucosa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "70 a 110 mg/dl" --force
+focus --class ~.domain.QuimicaSanguinea
+field number --fieldName glucosa --type java.math.BigDecimal --column glucosa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "70 a 110 mg/dl" --force
+field number --fieldName glucosa --type java.math.BigDecimal --column glucosa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "70 a 110 mg/dl" --force
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 20:23:30
+focus --class ~.domain.QuimicaSanguinea
+field number --fieldName glucosa --type java.math.BigDecimal --column glucosa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "70 a 110 mg/dl" --force
+field number --fieldName amilasa --type java.math.BigDecimal --column amilasa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "< a 110 U/L"
+enum constant --name _ --class ~.Grupo
+// [failed] enum constant --name _ --class ~.Grupo --force
+enum constant --name SIN_ASIGNAR --class ~.Grupo --force
+// [failed] enum constant --name SIN_ASIGNAR --class ~.Grupo --permitReservedWords 
+focus --class ~.domain.QuimicaSanguinea
+entity jpa --class ~.domain.ExamenGeneralOrina --table examen_general_orina --identifierColumn examen_general_orina_id --versionField version --versionType java.lang.Long --versionColumn VERSION
+entity jpa --class ~.domain.BiometriaHematica --table biometria_hematica --identifierColumn biometria_hematica_id --versionField version --versionType java.lang.Long --versionColumn VERSION
+focus --class ~.domain.Persona
+field set --fieldName quimicaSanguinea --type ~.domain.QuimicaSanguinea --mappedBy persona --joinColumnName persona_id --notNull --orphanRemoval
+field set --fieldName examenGeneralOrina --type ~.domain.ExamenGeneralOrina --mappedBy persona --joinColumnName persona_id --notNull --orphanRemoval
+field set --fieldName biometriaHematica --type ~.domain.BiometriaHematica --mappedBy persona --joinColumnName persona_id --notNull --orphanRemoval
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-22 22:18:48
+focus --class ~.domain.QuimicaSanguinea
+field date --fieldName fecha --type java.util.Calendar --column fecha --persistenceType JPA_TIMESTAMP --notNull
+field number --fieldName lipasa --type java.math.BigDecimal --column lipasa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "<= a 60 U/L"
+field number --fieldName creatinina --type java.math.BigDecimal --column creatinina --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "0.9 a 1.3 mg/dl"
+field number --fieldName urea --type java.math.BigDecimal --column urea --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "10 a 50 mg/dl"
+field number --fieldName nitrogeno_ureico --type java.math.BigDecimal --column nitrogeno_ureico --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "4.7 a 23.4 mg/dl"
+field number --fieldName acido_urico --type java.math.BigDecimal --column acido_urico --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "3.5 a 7.2 mg/dl"
+field number --fieldName bilirrubina_directa --type java.math.BigDecimal --column bilirrubina_directa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "0 a 0.2 mg/dl"
+field number --fieldName bilirrubina_indirecta --type java.math.BigDecimal --column bilirrubina_indirecta --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "0.1 a 1.0 mg/dl"
+field number --fieldName bilirrubina_directa --type java.math.BigDecimal --column bilirrubina_directa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "0 a 0.2 mg/dl" --force
+field number --fieldName bilirrubina_directa --type java.math.BigDecimal --column bilirrubina_directa --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "0 a 0.2 mg/dl" --force
+field number --fieldName bilirrubina_directa --type java.math.BigDecimal --column bilirrubina_directa --notNull --min 0 --max 999 --digitsInteger 2 --digitsFraction 2 --comment "0 a 0.2 mg/dl" --force
+field number --fieldName bilirrubina_directa --type java.math.BigDecimal --column bilirrubina_directa --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "0 a 0.2 mg/dl" --force
+// [failed] field number --fieldName bilirrubina_indirecta --type java.math.BigDecimal --column bilirrubina_indirecta --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "0.1 a 1.0 mg/dl"
+field number --fieldName bilirrubina_indirecta --type java.math.BigDecimal --column bilirrubina_indirecta --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "0.1 a 1.0 mg/dl" --force
+field number --fieldName bilirrubina_directa --type java.math.BigDecimal --column bilirrubina_directa --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "0 a 0.2 mg/dl" --force
+field number --fieldName bilirrubina_total --type java.math.BigDecimal --column bilirrubina_total --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "0.1 a 1.2 mg/dl" 
+field number --fieldName aspartato_amino_transferasa_ast_tgo --type java.math.BigDecimal --column aspartato_amino_transferasa_ast_tgo --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "<= a 32 U/L" 
+field number --fieldName alanina_amino_transferasa_alt_tgp --type java.math.BigDecimal --column alanina_amino_transferasa_alt_tgp --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "<= a 31 U/L" 
+field number --fieldName fosfatasa_alcalina --type java.math.BigDecimal --column fosfatasa_alcalina --notNull --min 0 --max 99 --digitsInteger 3 --digitsFraction 2 --comment "98 a 279 U/L" 
+field number --fieldName proteinas_totales --type java.math.BigDecimal --column proteinas_totales --notNull --min 0 --max 99 --digitsInteger 3 --digitsFraction 2 --comment "6.1 a 7.9 g/dl" 
+field number --fieldName albumina --type java.math.BigDecimal --column albumina --notNull --min 0 --max 99 --digitsInteger 3 --digitsFraction 2 --comment "3.5 a 4.8 g/dl" 
+field number --fieldName globulina --type java.math.BigDecimal --column globulina --notNull --min 0 --max 99 --digitsInteger 3 --digitsFraction 2 --comment "2.6 a 3.1 g/dl" 
+field number --fieldName relacion_a_g --type java.math.BigDecimal --column relacion_a_g --notNull --min 0 --max 99 --digitsInteger 3 --digitsFraction 2 --comment "1.3 a 2.2" 
+field number --fieldName gama_glutamil_transpeptidasa_ggt --type java.math.BigDecimal --column gama_glutamil_transpeptidasa_ggt --notNull --min 0 --max 99 --digitsInteger 3 --digitsFraction 2 --comment "< a 38 U/L" 
+field number --fieldName albumina --type java.math.BigDecimal --column albumina --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "3.5 a 4.8 g/dl" --force
+// [failed] field number --fieldName globulina --type java.math.BigDecimal --column globulina --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "2.6 a 3.1 g/dl" 
+field number --fieldName globulina --type java.math.BigDecimal --column globulina --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "2.6 a 3.1 g/dl"  --force
+field number --fieldName relacion_a_g --type java.math.BigDecimal --column relacion_a_g --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "1.3 a 2.2" --force
+field number --fieldName lactato_deshidrogenasa_ldh --type java.math.BigDecimal --column lactato_deshidrogenasa_ldh --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "230 a 460 U/L"
+field number --fieldName triacilgliceroles --type java.math.BigDecimal --column triacilgliceroles --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "<= a 150 mg/dl"
+field number --fieldName colesterol --type java.math.BigDecimal --column colesterol --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "<= a 200 mg/dl"
+field number --fieldName hdl_colesterol --type java.math.BigDecimal --column hdl_colesterol --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "30 a 85 mg/dl"
+field number --fieldName ldl_colesterol --type java.math.BigDecimal --column ldl_colesterol --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "83 a 168 mg/dl"
+field number --fieldName vldl --type java.math.BigDecimal --column vldl --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "10 a 33 mg/dl"
+field number --fieldName lipidos_totales --type java.math.BigDecimal --column lipidos_totales --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "450 a 900 mg/dl"
+field number --fieldName indice_aterogenico --type java.math.BigDecimal --column indice_aterogenico --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "< a 5"
+field number --fieldName indice_aterogenico --type java.math.BigDecimal --column indice_aterogenico --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "< a 5" --force
+field number --fieldName calcio --type java.math.BigDecimal --column calcio --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "8.8 a 10.2 mg/dl"
+field number --fieldName fosforo --type java.math.BigDecimal --column fosforo --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "2.5 a 4.8 mg/dl"
+field number --fieldName magnesio --type java.math.BigDecimal --column magnesio --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "1.58 a 2.55 mg/dl"
+field number --fieldName hierro --type java.math.BigDecimal --column hierro --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "33 a 193 ug/dl"
+field number --fieldName sodio --type java.math.BigDecimal --column sodio --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 --comment "136 a 150 mEq/L"
+field number --fieldName sodio --type java.math.BigDecimal --column sodio --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "136 a 150 mEq/L" --force
+field number --fieldName potasio --type java.math.BigDecimal --column potasio --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "3.5 a 5.5 mEq/L" 
+field number --fieldName cloro --type java.math.BigDecimal --column cloro --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --comment "95 a 115 mEq/L" 
+repository jpa --all 
+repository jpa --all 
+service --all
+web mvc controller --all --responseType THYMELEAF
+web mvc controller --all --pathPrefix /api
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-23 12:53:15
+web mvc language --code en --useAsDefault
+web mvc language --code en --useAsDefault
+field number --fieldName imc --type java.math.BigDecimal --column imc --notNull --digitsInteger 2 --digitsFraction 2 --force
+field number --fieldName imc --type java.math.BigDecimal --column imc --notNull --digitsInteger 3 --digitsFraction 2 --force
+focus --class ~.domain.LecturaComposicionCorporal
+field number --fieldName imc --type java.math.BigDecimal --column imc --notNull --digitsInteger 3 --digitsFraction 2 --force
+field number --fieldName imc --type java.math.BigDecimal --column imc --notNull --digitsInteger 3 --digitsFraction 2 --force
+web mvc language --code en --useAsDefault
+web mvc language --code en --useAsDefault
+field number --fieldName imc --type java.math.BigDecimal --column imc --notNull --digitsInteger 2 --digitsFraction 2 --force
+repository jpa --all 
+service --all
+service --all
+web mvc controller --all --responseType THYMELEAF
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-09-24 18:15:53
+web mvc language --code eS --useAsDefault
+focus --class ~.domain.ExamenGeneralOrina
+enum type --class ~.ColorOrina
+enum type --class ~.AspectoOrina
+enum constant --name INCOLORO
+enum constant --name TURBIO
+enum constant --name LECHOSO
+enum constant --name AMARILLENTO_ANARANJADO
+enum constant --name AMARILLENTO_VERDOSO
+enum constant --name ROJO
+enum constant --name AZUL_VERDOSO
+// [failed] enum constant --name AZUL_VERDOSO
+// [failed] focus --class ~.ColorOrina
+// [failed] focus --class ~.ColorOrina
+enum constant --name BLANCO --class ~.ColorOrina
+enum constant --name AMARILLO_O_NARANJA --class ~.ColorOrina
+enum constant --name ROSADO_O_ROJO --class ~.ColorOrina
+enum constant --name CASTA¥O_O_NEGRO --class ~.ColorOrina
+enum constant --name CASTA¥O_O_NEGRO --class ~.ColorOrina
+// [failed] enum constant --name AZUL_O_VERDE --class ~.ColorOrina
+focus --class ~.domain.ExamenGeneralOrina

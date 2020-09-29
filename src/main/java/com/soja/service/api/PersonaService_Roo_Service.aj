@@ -103,6 +103,60 @@ privileged aspect PersonaService_Roo_Service {
      * TODO Auto-generated method documentation
      * 
      * @param persona
+     * @param biometriaHematicaToAdd
+     * @return Persona
+     */
+    public abstract Persona PersonaService.addToBiometriaHematica(Persona persona, Iterable<Long> biometriaHematicaToAdd);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param biometriaHematicaToRemove
+     * @return Persona
+     */
+    public abstract Persona PersonaService.removeFromBiometriaHematica(Persona persona, Iterable<Long> biometriaHematicaToRemove);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param biometriaHematica
+     * @return Persona
+     */
+    public abstract Persona PersonaService.setBiometriaHematica(Persona persona, Iterable<Long> biometriaHematica);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param examenGeneralOrinaToAdd
+     * @return Persona
+     */
+    public abstract Persona PersonaService.addToExamenGeneralOrina(Persona persona, Iterable<Long> examenGeneralOrinaToAdd);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param examenGeneralOrinaToRemove
+     * @return Persona
+     */
+    public abstract Persona PersonaService.removeFromExamenGeneralOrina(Persona persona, Iterable<Long> examenGeneralOrinaToRemove);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param examenGeneralOrina
+     * @return Persona
+     */
+    public abstract Persona PersonaService.setExamenGeneralOrina(Persona persona, Iterable<Long> examenGeneralOrina);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
      * @param lecturaComposicionCorporalToAdd
      * @return Persona
      */
@@ -125,5 +179,32 @@ privileged aspect PersonaService_Roo_Service {
      * @return Persona
      */
     public abstract Persona PersonaService.setLecturaComposicionCorporal(Persona persona, Iterable<Long> lecturaComposicionCorporal);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param quimicaSanguineaToAdd
+     * @return Persona
+     */
+    public abstract Persona PersonaService.addToQuimicaSanguinea(Persona persona, Iterable<Long> quimicaSanguineaToAdd);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param quimicaSanguineaToRemove
+     * @return Persona
+     */
+    public abstract Persona PersonaService.removeFromQuimicaSanguinea(Persona persona, Iterable<Long> quimicaSanguineaToRemove);
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param persona
+     * @param quimicaSanguinea
+     * @return Persona
+     */
+    public abstract Persona PersonaService.setQuimicaSanguinea(Persona persona, Iterable<Long> quimicaSanguinea);
     
 }

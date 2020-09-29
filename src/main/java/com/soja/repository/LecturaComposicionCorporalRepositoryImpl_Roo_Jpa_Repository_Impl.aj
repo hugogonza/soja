@@ -25,6 +25,18 @@ privileged aspect LecturaComposicionCorporalRepositoryImpl_Roo_Jpa_Repository_Im
      * TODO Auto-generated attribute documentation
      * 
      */
+    public static final String LecturaComposicionCorporalRepositoryImpl.PERSONA = "persona";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String LecturaComposicionCorporalRepositoryImpl.FECHA_HORA_EVALUACION = "fechaHoraEvaluacion";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
     public static final String LecturaComposicionCorporalRepositoryImpl.ESTATURA = "estatura";
     
     /**
@@ -43,7 +55,7 @@ privileged aspect LecturaComposicionCorporalRepositoryImpl_Roo_Jpa_Repository_Im
      * TODO Auto-generated attribute documentation
      * 
      */
-    public static final String LecturaComposicionCorporalRepositoryImpl.PORCENTAJE_MASA_CORPORAL = "porcentajeMasaCorporal";
+    public static final String LecturaComposicionCorporalRepositoryImpl.PORCENTAJE_GRASA_CORPORAL = "porcentajeGrasaCorporal";
     
     /**
      * TODO Auto-generated attribute documentation
@@ -88,18 +100,6 @@ privileged aspect LecturaComposicionCorporalRepositoryImpl_Roo_Jpa_Repository_Im
     public static final String LecturaComposicionCorporalRepositoryImpl.CIRCUNFERENCIA_MUNECA = "circunferenciaMuneca";
     
     /**
-     * TODO Auto-generated attribute documentation
-     * 
-     */
-    public static final String LecturaComposicionCorporalRepositoryImpl.FECHA_HORA_EVALUACION = "fechaHoraEvaluacion";
-    
-    /**
-     * TODO Auto-generated attribute documentation
-     * 
-     */
-    public static final String LecturaComposicionCorporalRepositoryImpl.PERSONA = "persona";
-    
-    /**
      * TODO Auto-generated method documentation
      * 
      * @param globalSearch
@@ -112,23 +112,23 @@ privileged aspect LecturaComposicionCorporalRepositoryImpl_Roo_Jpa_Repository_Im
         
         JPQLQuery<LecturaComposicionCorporal> query = from(lecturaComposicionCorporal);
         
-        Path<?>[] paths = new Path<?>[] {lecturaComposicionCorporal.estatura,lecturaComposicionCorporal.peso,lecturaComposicionCorporal.imc,lecturaComposicionCorporal.porcentajeMasaCorporal,lecturaComposicionCorporal.masaMagra,lecturaComposicionCorporal.porcentajeAguaCorporal,lecturaComposicionCorporal.grasaVisceral,lecturaComposicionCorporal.circunferenciaCintura,lecturaComposicionCorporal.circunferenciaCadera,lecturaComposicionCorporal.indiceCinturaCadera,lecturaComposicionCorporal.circunferenciaMuneca,lecturaComposicionCorporal.fechaHoraEvaluacion,lecturaComposicionCorporal.persona};        
+        Path<?>[] paths = new Path<?>[] {lecturaComposicionCorporal.persona,lecturaComposicionCorporal.fechaHoraEvaluacion,lecturaComposicionCorporal.estatura,lecturaComposicionCorporal.peso,lecturaComposicionCorporal.imc,lecturaComposicionCorporal.porcentajeGrasaCorporal,lecturaComposicionCorporal.masaMagra,lecturaComposicionCorporal.porcentajeAguaCorporal,lecturaComposicionCorporal.grasaVisceral,lecturaComposicionCorporal.circunferenciaCintura,lecturaComposicionCorporal.circunferenciaCadera,lecturaComposicionCorporal.indiceCinturaCadera,lecturaComposicionCorporal.circunferenciaMuneca};        
         applyGlobalSearch(globalSearch, query, paths);
         
         AttributeMappingBuilder mapping = buildMapper()
+			.map(PERSONA, lecturaComposicionCorporal.persona)
+			.map(FECHA_HORA_EVALUACION, lecturaComposicionCorporal.fechaHoraEvaluacion)
 			.map(ESTATURA, lecturaComposicionCorporal.estatura)
 			.map(PESO, lecturaComposicionCorporal.peso)
 			.map(IMC, lecturaComposicionCorporal.imc)
-			.map(PORCENTAJE_MASA_CORPORAL, lecturaComposicionCorporal.porcentajeMasaCorporal)
+			.map(PORCENTAJE_GRASA_CORPORAL, lecturaComposicionCorporal.porcentajeGrasaCorporal)
 			.map(MASA_MAGRA, lecturaComposicionCorporal.masaMagra)
 			.map(PORCENTAJE_AGUA_CORPORAL, lecturaComposicionCorporal.porcentajeAguaCorporal)
 			.map(GRASA_VISCERAL, lecturaComposicionCorporal.grasaVisceral)
 			.map(CIRCUNFERENCIA_CINTURA, lecturaComposicionCorporal.circunferenciaCintura)
 			.map(CIRCUNFERENCIA_CADERA, lecturaComposicionCorporal.circunferenciaCadera)
 			.map(INDICE_CINTURA_CADERA, lecturaComposicionCorporal.indiceCinturaCadera)
-			.map(CIRCUNFERENCIA_MUNECA, lecturaComposicionCorporal.circunferenciaMuneca)
-			.map(FECHA_HORA_EVALUACION, lecturaComposicionCorporal.fechaHoraEvaluacion)
-			.map(PERSONA, lecturaComposicionCorporal.persona);
+			.map(CIRCUNFERENCIA_MUNECA, lecturaComposicionCorporal.circunferenciaMuneca);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);
@@ -150,26 +150,26 @@ privileged aspect LecturaComposicionCorporalRepositoryImpl_Roo_Jpa_Repository_Im
         
         JPQLQuery<LecturaComposicionCorporal> query = from(lecturaComposicionCorporal);
         
-        Path<?>[] paths = new Path<?>[] {lecturaComposicionCorporal.estatura,lecturaComposicionCorporal.peso,lecturaComposicionCorporal.imc,lecturaComposicionCorporal.porcentajeMasaCorporal,lecturaComposicionCorporal.masaMagra,lecturaComposicionCorporal.porcentajeAguaCorporal,lecturaComposicionCorporal.grasaVisceral,lecturaComposicionCorporal.circunferenciaCintura,lecturaComposicionCorporal.circunferenciaCadera,lecturaComposicionCorporal.indiceCinturaCadera,lecturaComposicionCorporal.circunferenciaMuneca,lecturaComposicionCorporal.fechaHoraEvaluacion,lecturaComposicionCorporal.persona};        
+        Path<?>[] paths = new Path<?>[] {lecturaComposicionCorporal.persona,lecturaComposicionCorporal.fechaHoraEvaluacion,lecturaComposicionCorporal.estatura,lecturaComposicionCorporal.peso,lecturaComposicionCorporal.imc,lecturaComposicionCorporal.porcentajeGrasaCorporal,lecturaComposicionCorporal.masaMagra,lecturaComposicionCorporal.porcentajeAguaCorporal,lecturaComposicionCorporal.grasaVisceral,lecturaComposicionCorporal.circunferenciaCintura,lecturaComposicionCorporal.circunferenciaCadera,lecturaComposicionCorporal.indiceCinturaCadera,lecturaComposicionCorporal.circunferenciaMuneca};        
         applyGlobalSearch(globalSearch, query, paths);
         
         // Also, filter by the provided ids
         query.where(lecturaComposicionCorporal.id.in(ids));
         
         AttributeMappingBuilder mapping = buildMapper()
+			.map(PERSONA, lecturaComposicionCorporal.persona)
+			.map(FECHA_HORA_EVALUACION, lecturaComposicionCorporal.fechaHoraEvaluacion)
 			.map(ESTATURA, lecturaComposicionCorporal.estatura)
 			.map(PESO, lecturaComposicionCorporal.peso)
 			.map(IMC, lecturaComposicionCorporal.imc)
-			.map(PORCENTAJE_MASA_CORPORAL, lecturaComposicionCorporal.porcentajeMasaCorporal)
+			.map(PORCENTAJE_GRASA_CORPORAL, lecturaComposicionCorporal.porcentajeGrasaCorporal)
 			.map(MASA_MAGRA, lecturaComposicionCorporal.masaMagra)
 			.map(PORCENTAJE_AGUA_CORPORAL, lecturaComposicionCorporal.porcentajeAguaCorporal)
 			.map(GRASA_VISCERAL, lecturaComposicionCorporal.grasaVisceral)
 			.map(CIRCUNFERENCIA_CINTURA, lecturaComposicionCorporal.circunferenciaCintura)
 			.map(CIRCUNFERENCIA_CADERA, lecturaComposicionCorporal.circunferenciaCadera)
 			.map(INDICE_CINTURA_CADERA, lecturaComposicionCorporal.indiceCinturaCadera)
-			.map(CIRCUNFERENCIA_MUNECA, lecturaComposicionCorporal.circunferenciaMuneca)
-			.map(FECHA_HORA_EVALUACION, lecturaComposicionCorporal.fechaHoraEvaluacion)
-			.map(PERSONA, lecturaComposicionCorporal.persona);
+			.map(CIRCUNFERENCIA_MUNECA, lecturaComposicionCorporal.circunferenciaMuneca);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);
@@ -194,23 +194,23 @@ privileged aspect LecturaComposicionCorporalRepositoryImpl_Roo_Jpa_Repository_Im
         Assert.notNull(persona, "persona is required");
         
         query.where(lecturaComposicionCorporal.persona.eq(persona));
-        Path<?>[] paths = new Path<?>[] {lecturaComposicionCorporal.estatura,lecturaComposicionCorporal.peso,lecturaComposicionCorporal.imc,lecturaComposicionCorporal.porcentajeMasaCorporal,lecturaComposicionCorporal.masaMagra,lecturaComposicionCorporal.porcentajeAguaCorporal,lecturaComposicionCorporal.grasaVisceral,lecturaComposicionCorporal.circunferenciaCintura,lecturaComposicionCorporal.circunferenciaCadera,lecturaComposicionCorporal.indiceCinturaCadera,lecturaComposicionCorporal.circunferenciaMuneca,lecturaComposicionCorporal.fechaHoraEvaluacion,lecturaComposicionCorporal.persona};        
+        Path<?>[] paths = new Path<?>[] {lecturaComposicionCorporal.persona,lecturaComposicionCorporal.fechaHoraEvaluacion,lecturaComposicionCorporal.estatura,lecturaComposicionCorporal.peso,lecturaComposicionCorporal.imc,lecturaComposicionCorporal.porcentajeGrasaCorporal,lecturaComposicionCorporal.masaMagra,lecturaComposicionCorporal.porcentajeAguaCorporal,lecturaComposicionCorporal.grasaVisceral,lecturaComposicionCorporal.circunferenciaCintura,lecturaComposicionCorporal.circunferenciaCadera,lecturaComposicionCorporal.indiceCinturaCadera,lecturaComposicionCorporal.circunferenciaMuneca};        
         applyGlobalSearch(globalSearch, query, paths);
         
         AttributeMappingBuilder mapping = buildMapper()
+			.map(PERSONA, lecturaComposicionCorporal.persona)
+			.map(FECHA_HORA_EVALUACION, lecturaComposicionCorporal.fechaHoraEvaluacion)
 			.map(ESTATURA, lecturaComposicionCorporal.estatura)
 			.map(PESO, lecturaComposicionCorporal.peso)
 			.map(IMC, lecturaComposicionCorporal.imc)
-			.map(PORCENTAJE_MASA_CORPORAL, lecturaComposicionCorporal.porcentajeMasaCorporal)
+			.map(PORCENTAJE_GRASA_CORPORAL, lecturaComposicionCorporal.porcentajeGrasaCorporal)
 			.map(MASA_MAGRA, lecturaComposicionCorporal.masaMagra)
 			.map(PORCENTAJE_AGUA_CORPORAL, lecturaComposicionCorporal.porcentajeAguaCorporal)
 			.map(GRASA_VISCERAL, lecturaComposicionCorporal.grasaVisceral)
 			.map(CIRCUNFERENCIA_CINTURA, lecturaComposicionCorporal.circunferenciaCintura)
 			.map(CIRCUNFERENCIA_CADERA, lecturaComposicionCorporal.circunferenciaCadera)
 			.map(INDICE_CINTURA_CADERA, lecturaComposicionCorporal.indiceCinturaCadera)
-			.map(CIRCUNFERENCIA_MUNECA, lecturaComposicionCorporal.circunferenciaMuneca)
-			.map(FECHA_HORA_EVALUACION, lecturaComposicionCorporal.fechaHoraEvaluacion)
-			.map(PERSONA, lecturaComposicionCorporal.persona);
+			.map(CIRCUNFERENCIA_MUNECA, lecturaComposicionCorporal.circunferenciaMuneca);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);

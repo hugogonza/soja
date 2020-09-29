@@ -7,5 +7,5 @@ package com.soja;
  */
 public enum Grupo {
 
-    CON_FITOQUIMICOS, SIN_FITOQUIMICOS
+    SIN_ASIGNAR,CON_FITOQUIMICOS,SIN_FITOQUIMICOS,
 }

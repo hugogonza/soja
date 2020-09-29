@@ -1,0 +1,16 @@
+<!--TABLE-->
+<div class="table-responsive" id="containerFields" data-th-fragment="biometriahematica-entityModalConfirmBody" data-th-with="collectionLink=${@linkBuilder.of('BiometriaHematicasCollectionThymeleafController')},itemLink=${@linkBuilder.of('BiometriaHematicasItemThymeleafController')}">
+    <table id="biometriahematica-entity-table-items-to-remove-batch" data-data-load-url="${collectionLink.to('datatablesByIdsIn')}">
+      <thead>
+        <tr>
+          <th data-data="persona" data-th-text="#{label_biometriahematica_persona}">persona</th>
+        </tr>
+      </thead>
+      <tbody data-th-remove="all">
+        <tr>
+          <td>persona</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!-- /TABLE -->
