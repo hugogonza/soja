@@ -1,0 +1,22 @@
+<!--TABLE-->
+<div class="table-responsive" id="containerFields" data-th-fragment="persona-entityModalConfirmBody" data-th-with="collectionLink=${@linkBuilder.of('PersonaeCollectionThymeleafController')},itemLink=${@linkBuilder.of('PersonaeItemThymeleafController')}">
+    <table id="persona-entity-table-items-to-remove-batch" data-data-load-url="${collectionLink.to('datatablesByIdsIn')}">
+      <thead>
+        <tr>
+          <th data-data="alias" data-th-text="#{label_persona_alias}">alias</th>
+          <th data-data="genero" data-th-text="#{label_persona_genero}">genero</th>
+          <th data-data="fechaNacimiento" data-th-text="#{label_persona_fechanacimiento}">fechaNacimiento</th>
+          <th data-data="grupo" data-th-text="#{label_persona_grupo}">grupo</th>
+        </tr>
+      </thead>
+      <tbody data-th-remove="all">
+        <tr>
+          <td>alias</td>
+          <td>genero</td>
+          <td>fechaNacimiento</td>
+          <td>grupo</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!-- /TABLE -->

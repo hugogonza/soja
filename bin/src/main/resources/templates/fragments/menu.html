@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page menu</title>
+  </head>
+  <body id="body">
+    <!--
+    Only the internal content of the following div is included within
+    the template, in menu fragment
+    -->
+    <nav class="navbar navbar-default navbar-static-top" data-th-fragment="menu">
+
+         <div class="container">
+
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainnav" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <!-- Brand logo -->
+              <div class="organization-logo navbar-brand">
+                <a title="soja" href="/" data-th-href="@{/}">
+                  <img alt="soja" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
+                </a>
+              </div>
+              <!-- Name application -->
+              <div class="application-name navbar-brand hidden-xs">
+                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">soja</a>
+              </div>
+
+            </div><!-- /navbar-header -->
+
+            <div id="mainnav" class="navbar-collapse collapse">
+
+              <ul class="nav navbar-nav" id="entitiesMenuEntries">
+                <li class="dropdown" id="biometriahematica-entry" data-z="63525d36">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_biometriahematica})}">BiometriaHematica<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/biometriahematicas/create-form" data-th-href="@{/biometriahematicas/create-form}" data-th-utext="#{label_create_entity(#{label_biometriahematica})}">Create BiometriaHematica</a></li>
+	                  <li><a href="/biometriahematicas" data-th-href="@{/biometriahematicas}" data-th-utext="#{label_list_entity(#{label_biometriahematica_plural})}">List BiometriaHematica</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="examengeneralorina-entry" data-z="4b393ba8">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_examengeneralorina})}">ExamenGeneralOrina<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/examengeneralorinas/create-form" data-th-href="@{/examengeneralorinas/create-form}" data-th-utext="#{label_create_entity(#{label_examengeneralorina})}">Create ExamenGeneralOrina</a></li>
+	                  <li><a href="/examengeneralorinas" data-th-href="@{/examengeneralorinas}" data-th-utext="#{label_list_entity(#{label_examengeneralorina_plural})}">List ExamenGeneralOrina</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="lecturacomposicioncorporal-entry" data-z="8ddabaa8">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_lecturacomposicioncorporal})}">LecturaComposicionCorporal<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/lecturacomposicioncorporals/create-form" data-th-href="@{/lecturacomposicioncorporals/create-form}" data-th-utext="#{label_create_entity(#{label_lecturacomposicioncorporal})}">Create LecturaComposicionCorporal</a></li>
+	                  <li><a href="/lecturacomposicioncorporals" data-th-href="@{/lecturacomposicioncorporals}" data-th-utext="#{label_list_entity(#{label_lecturacomposicioncorporal_plural})}">List LecturaComposicionCorporal</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="persona-entry" data-z="fdbb18a4">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_persona})}">Persona<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/personae/create-form" data-th-href="@{/personae/create-form}" data-th-utext="#{label_create_entity(#{label_persona})}">Create Persona</a></li>
+	                  <li><a href="/personae" data-th-href="@{/personae}" data-th-utext="#{label_list_entity(#{label_persona_plural})}">List Persona</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="quimicasanguinea-entry" data-z="799365c8">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_quimicasanguinea})}">QuimicaSanguinea<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/quimicasanguineas/create-form" data-th-href="@{/quimicasanguineas/create-form}" data-th-utext="#{label_create_entity(#{label_quimicasanguinea})}">Create QuimicaSanguinea</a></li>
+	                  <li><a href="/quimicasanguineas" data-th-href="@{/quimicasanguineas}" data-th-utext="#{label_list_entity(#{label_quimicasanguinea_plural})}">List QuimicaSanguinea</a></li>
+                 </ul>
+                </li>
+              </ul>
+
+              <!-- Language select -->
+              <ul class="nav navbar-nav navbar-right upper-nav languages" data-th-replace="~{fragments/languages :: languages}">
+                <!-- Content replaced by the session template fragment language.html
+                -->
+                <span>Language data</span>
+              </ul>
+
+
+
+              <!-- User menu links -->
+              <ul class="nav navbar-nav navbar-right upper-nav links" data-th-replace="~{fragments/session-links :: links}">
+                <!-- Content replaced by the links template fragment session-links.html
+                -->
+                <span>User session data</span>
+              </ul>
+           </div>
+
+          </div>
+    </nav>
+
+    <!--
+    Only the internal content of the following div is included within
+    the template, in menu-languages fragment
+    -->
+    <nav class="navbar navbar-default navbar-static-top" data-th-fragment="menu-languages">
+
+         <div class="container">
+
+            <div class="navbar-header">
+
+              <!-- Brand logo -->
+              <div class="organization-logo navbar-brand">
+                <a title="soja" href="/" data-th-href="@{/}">
+                  <img alt="soja" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
+                </a>
+              </div>
+              <!-- Name application -->
+              <div class="application-name navbar-brand hidden-xs">
+                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">soja</a>
+              </div>
+
+            </div><!-- /navbar-header -->
+
+            <div id="mainnav" class="navbar-collapse collapse">
+
+              <!-- Language select -->
+              <ul class="nav navbar-nav navbar-right upper-nav languages" data-th-replace="~{fragments/languages :: languages}">
+                <!-- Content replaced by the session template fragment language.html
+                -->
+                <span>Language data</span>
+              </ul>
+
+           </div>
+
+          </div>
+    </nav>
+
+  </body>
+</html>

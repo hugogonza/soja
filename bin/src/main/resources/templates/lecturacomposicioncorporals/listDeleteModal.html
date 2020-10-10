@@ -1,0 +1,24 @@
+<!--TABLE-->
+<div class="table-responsive" id="containerFields" data-th-fragment="lecturacomposicioncorporal-entityModalConfirmBody" data-th-with="collectionLink=${@linkBuilder.of('LecturaComposicionCorporalsCollectionThymeleafController')},itemLink=${@linkBuilder.of('LecturaComposicionCorporalsItemThymeleafController')}">
+    <table id="lecturacomposicioncorporal-entity-table-item-to-remove" data-data-load-url="${collectionLink.to('datatablesByIdsIn')}">
+      <thead>
+        <tr>
+          <th data-data="persona" data-th-text="#{label_lecturacomposicioncorporal_persona}">persona</th>
+          <th data-data="fechaHoraEvaluacion" data-th-text="#{label_lecturacomposicioncorporal_fechahoraevaluacion}">fechaHoraEvaluacion</th>
+          <th data-data="estatura" data-th-text="#{label_lecturacomposicioncorporal_estatura}">estatura</th>
+          <th data-data="peso" data-th-text="#{label_lecturacomposicioncorporal_peso}">peso</th>
+          <th data-data="imc" data-th-text="#{label_lecturacomposicioncorporal_imc}">imc</th>
+        </tr>
+      </thead>
+      <tbody data-th-remove="all">
+        <tr>
+          <td>persona</td>
+          <td>fechaHoraEvaluacion</td>
+          <td>estatura</td>
+          <td>peso</td>
+          <td>imc</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!-- /TABLE -->
