@@ -396,8 +396,8 @@ public class QuimicaSanguinea {
     @NotNull
     @Column(name = "hierro")
     @Min(0L)
-    @Max(99L)
-    @Digits(integer = 2, fraction = 2)
+    @Max(999L)
+    @Digits(integer = 3, fraction = 2)
     
     private BigDecimal hierro;
 

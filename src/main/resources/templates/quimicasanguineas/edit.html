@@ -295,7 +295,7 @@
 <div class="form-group has-error has-feedback" data-z="8765469b" id="quimicasanguinea-hierro-field" data-th-classappend="${#fields.hasErrors('hierro')}? 'has-error has-feedback'" data-th-class="form-group">
   <label for="hierro" class="col-md-3 control-label" data-th-text="#{label_quimicasanguinea_hierro}">hierro</label>
   <div class="col-md-3">
-    <input id="hierro" name="hierro" data-th-value="*{{hierro}}" type="text" class="form-control inputmask" placeholder="hierro" data-th-placeholder="#{label_quimicasanguinea_hierro}" data-toggle="tooltip" aria-describedby="hierroStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+    <input id="hierro" name="hierro" data-th-value="*{{hierro}}" type="text" class="form-control inputmask" placeholder="hierro" data-th-placeholder="#{label_quimicasanguinea_hierro}" data-toggle="tooltip" aria-describedby="hierroStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="3" data-inputmask-digits="2" required="required" min="0" max="999" />
       <span data-th-classappend="${#fields.hasErrors('hierro')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('hierro')}" aria-hidden="true"></span>
       <span id="hierro-error" class="help-block" data-th-if="${#fields.hasErrors('hierro')}" data-th-errors="*{hierro}">Error message.</span>
   </div>
