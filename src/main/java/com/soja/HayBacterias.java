@@ -7,5 +7,5 @@ package com.soja;
  */
 public enum HayBacterias {
 
-    ESCASAS, POCAS, NUMEROSAS, ABUNDANTES, NO_SE_OBSERVAN
+    ESCASAS, NUMEROSAS, ABUNDANTES, NO_SE_OBSERVAN
 }

@@ -7,5 +7,5 @@ package com.soja;
  */
 public enum HayEnOrina {
 
-    NO_SE_OBSERVAN, SE_OBSERVAN
+	ESCASAS, NUMEROSAS, ABUNDANTES, NO_SE_OBSERVAN
 }

@@ -28,6 +28,8 @@ import io.springlets.data.web.validation.GenericValidator;
 import io.springlets.web.mvc.util.ControllerMethodLinkBuilderFactory;
 import io.springlets.web.mvc.util.MethodLinkBuilderFactory;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
@@ -38,6 +40,7 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.apache.commons.lang3.StringUtils;
+import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -297,6 +300,7 @@ privileged aspect BiometriaHematicasCollectionThymeleafController_Roo_Thymeleaf 
      */
     public void BiometriaHematicasCollectionThymeleafController.populateFormats(Model model) {
         model.addAttribute("application_locale", LocaleContextHolder.getLocale().getLanguage());
+        model.addAttribute("fecha_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     /**
@@ -516,6 +520,60 @@ privileged aspect BiometriaHematicasCollectionThymeleafController_Roo_Thymeleaf 
         }
         else if (columnName.equals("version")) {
             builder.addColumn(getMessageSource().getMessage("label_biometriahematica_version", null, "Version", locale), "version", Long.class.getName(), 100);
+        }
+        else if (columnName.equals("fecha")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_fecha", null, "Fecha", locale), "fecha", Calendar.class.getName(), 100);
+        }
+        else if (columnName.equals("eritrocitos")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_eritrocitos", null, "Eritrocitos", locale), "eritrocitos", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("hemoglobina")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_hemoglobina", null, "Hemoglobina", locale), "hemoglobina", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("hematrocito")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_hematrocito", null, "Hematrocito", locale), "hematrocito", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("amplitud_de_distribucion_eritrocitaria_rdw_cv")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_amplitud_de_distribucion_eritrocitaria_rdw_cv", null, "Amplitud _ De _ Distribucion _ Eritrocitaria _ Rdw _ Cv", locale), "amplitud_de_distribucion_eritrocitaria_rdw_cv", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("amplitud_de_distribucion_eritrocitaria_rdw_sd")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_amplitud_de_distribucion_eritrocitaria_rdw_sd", null, "Amplitud _ De _ Distribucion _ Eritrocitaria _ Rdw _ Sd", locale), "amplitud_de_distribucion_eritrocitaria_rdw_sd", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("velocidad_de_sedimentacion_globular")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_velocidad_de_sedimentacion_globular", null, "Velocidad _ De _ Sedimentacion _ Globular", locale), "velocidad_de_sedimentacion_globular", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("volumen_corpuscular_medio")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_volumen_corpuscular_medio", null, "Volumen _ Corpuscular _ Medio", locale), "volumen_corpuscular_medio", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("hemoglobina_corpuscular_media")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_hemoglobina_corpuscular_media", null, "Hemoglobina _ Corpuscular _ Media", locale), "hemoglobina_corpuscular_media", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("concentracion_media_de_hemoglobina_corpuscular")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_concentracion_media_de_hemoglobina_corpuscular", null, "Concentracion _ Media _ De _ Hemoglobina _ Corpuscular", locale), "concentracion_media_de_hemoglobina_corpuscular", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("leucocitos")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_leucocitos", null, "Leucocitos", locale), "leucocitos", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("linfocitos")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_linfocitos", null, "Linfocitos", locale), "linfocitos", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("monocitos")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_monocitos", null, "Monocitos", locale), "monocitos", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("neutrofilos")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_neutrofilos", null, "Neutrofilos", locale), "neutrofilos", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("eosinofilos")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_eosinofilos", null, "Eosinofilos", locale), "eosinofilos", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("basofilos")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_basofilos", null, "Basofilos", locale), "basofilos", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("plaquetas")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_plaquetas", null, "Plaquetas", locale), "plaquetas", BigDecimal.class.getName(), 100);
+        }
+        else if (columnName.equals("volumen_plaquetario_medio")) {
+            builder.addColumn(getMessageSource().getMessage("label_biometriahematica_volumen_plaquetario_medio", null, "Volumen _ Plaquetario _ Medio", locale), "volumen_plaquetario_medio", BigDecimal.class.getName(), 100);
         }
         }
         catch (ColumnBuilderException e) {

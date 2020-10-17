@@ -46,7 +46,7 @@
     <label for="persona" class="col-md-3 control-label" data-th-text="#{label_examengeneralorina_persona}">Persona</label>
     <div class="col-md-6">
       <!-- Select2 -->
-      <select data-th-field="*{persona}" class="form-control dropdown-select-ajax" data-allow-clear="true" data-data-ajax--url="${collectionLink.to('select2')}" data-ajax--cache="true" data-ajax--delay="250" data-ajax--data-type="json" data-data-placeholder="#{info_select_an_option}">
+      <select data-th-field="*{persona}" class="form-control dropdown-select-ajax" data-allow-clear="false" data-data-ajax--url="${collectionLink.to('select2')}" data-ajax--cache="true" data-ajax--delay="250" data-ajax--data-type="json" required="required" data-data-placeholder="#{info_select_an_option}">
           <option data-th-unless="*{persona} == null" data-th-value="*{persona.id}" data-th-text="*{{persona}}" selected="selected">Persona</option>
       </select>
       <span data-th-classappend="${#fields.hasErrors('persona')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('persona')}" aria-hidden="true"></span>
@@ -93,7 +93,7 @@
 <div class="form-group has-error has-feedback" data-z="de578cc4" id="examengeneralorina-densidad-field" data-th-classappend="${#fields.hasErrors('densidad')}? 'has-error has-feedback'" data-th-class="form-group">
   <label for="densidad" class="col-md-3 control-label" data-th-text="#{label_examengeneralorina_densidad}">densidad</label>
   <div class="col-md-3">
-    <input id="densidad" name="densidad" data-th-value="*{{densidad}}" type="text" class="form-control inputmask" placeholder="densidad" data-th-placeholder="#{label_examengeneralorina_densidad}" data-toggle="tooltip" aria-describedby="densidadStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+    <input id="densidad" name="densidad" data-th-value="*{{densidad}}" type="text" class="form-control inputmask" placeholder="densidad" data-th-placeholder="#{label_examengeneralorina_densidad}" data-toggle="tooltip" aria-describedby="densidadStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="3" required="required" min="0" max="99" />
       <span data-th-classappend="${#fields.hasErrors('densidad')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('densidad')}" aria-hidden="true"></span>
       <span id="densidad-error" class="help-block" data-th-if="${#fields.hasErrors('densidad')}" data-th-errors="*{densidad}">Error message.</span>
   </div>
@@ -147,26 +147,20 @@
   </div>
 </div>
 <div class="form-group has-error has-feedback" data-z="9b79a444" id="examengeneralorina-nitritos-field" data-th-classappend="${#fields.hasErrors('nitritos')}? 'has-error has-feedback'" data-th-class="form-group">
-    <label for="nitritos" class="col-md-3 control-label" data-th-text="#{label_examengeneralorina_nitritos}">nitritos</label>
-    <div class="col-md-6">
-      <!-- Select2 -->
-      <select data-th-field="*{nitritos}" class="form-control dropdown-select-simple" data-allow-clear="true" data-th-attr="data-placeholder=#{info_select_an_option}" required="required">
-         <option data-th-each="item : ${nitritos}" data-th-value="${item}" data-th-text="${{item}}">Value</option>
-      </select>
+  <label for="nitritos" class="col-md-3 control-label" data-th-text="#{label_examengeneralorina_nitritos}">nitritos</label>
+  <div class="col-md-3">
+    <input id="nitritos" name="nitritos" data-th-value="*{{nitritos}}" type="text" class="form-control inputmask" placeholder="nitritos" data-th-placeholder="#{label_examengeneralorina_nitritos}" data-toggle="tooltip" aria-describedby="nitritosStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="3" data-inputmask-digits="2" required="required" min="0" max="999" />
       <span data-th-classappend="${#fields.hasErrors('nitritos')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('nitritos')}" aria-hidden="true"></span>
       <span id="nitritos-error" class="help-block" data-th-if="${#fields.hasErrors('nitritos')}" data-th-errors="*{nitritos}">Error message.</span>
-    </div>
+  </div>
 </div>
 <div class="form-group has-error has-feedback" data-z="8749ac4" id="examengeneralorina-leucocitos-field" data-th-classappend="${#fields.hasErrors('leucocitos')}? 'has-error has-feedback'" data-th-class="form-group">
-    <label for="leucocitos" class="col-md-3 control-label" data-th-text="#{label_examengeneralorina_leucocitos}">leucocitos</label>
-    <div class="col-md-6">
-      <!-- Select2 -->
-      <select data-th-field="*{leucocitos}" class="form-control dropdown-select-simple" data-allow-clear="true" data-th-attr="data-placeholder=#{info_select_an_option}" required="required">
-         <option data-th-each="item : ${leucocitos}" data-th-value="${item}" data-th-text="${{item}}">Value</option>
-      </select>
+  <label for="leucocitos" class="col-md-3 control-label" data-th-text="#{label_examengeneralorina_leucocitos}">leucocitos</label>
+  <div class="col-md-3">
+    <input id="leucocitos" name="leucocitos" data-th-value="*{{leucocitos}}" type="text" class="form-control inputmask" placeholder="leucocitos" data-th-placeholder="#{label_examengeneralorina_leucocitos}" data-toggle="tooltip" aria-describedby="leucocitosStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="3" data-inputmask-digits="2" required="required" min="0" max="999" />
       <span data-th-classappend="${#fields.hasErrors('leucocitos')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('leucocitos')}" aria-hidden="true"></span>
       <span id="leucocitos-error" class="help-block" data-th-if="${#fields.hasErrors('leucocitos')}" data-th-errors="*{leucocitos}">Error message.</span>
-    </div>
+  </div>
 </div>
 <div class="form-group has-error has-feedback" data-z="d02bd03a" id="examengeneralorina-celulas_epiteliales_a-field" data-th-classappend="${#fields.hasErrors('celulas_epiteliales_a')}? 'has-error has-feedback'" data-th-class="form-group">
   <label for="celulas_epiteliales_a" class="col-md-3 control-label" data-th-text="#{label_examengeneralorina_celulas_epiteliales_a}">celulas_epiteliales_a</label>

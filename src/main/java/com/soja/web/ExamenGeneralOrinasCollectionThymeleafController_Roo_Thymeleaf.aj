@@ -319,8 +319,6 @@ privileged aspect ExamenGeneralOrinasCollectionThymeleafController_Roo_Thymeleaf
         populateFormats(model);
         model.addAttribute("Color", Arrays.asList(ColorOrina.values()));
         model.addAttribute("Aspecto", Arrays.asList(AspectoOrina.values()));
-        model.addAttribute("nitritos", Arrays.asList(HayEnOrina.values()));
-        model.addAttribute("leucocitos", Arrays.asList(HayEnOrina.values()));
         model.addAttribute("tipo_cristales", Arrays.asList(TipoCristales.values()));
         model.addAttribute("cristales_cantidad", Arrays.asList(CantidadCristales.values()));
         model.addAttribute("levaduras", Arrays.asList(HayEnOrina.values()));
@@ -570,10 +568,10 @@ privileged aspect ExamenGeneralOrinasCollectionThymeleafController_Roo_Thymeleaf
             builder.addColumn(getMessageSource().getMessage("label_examengeneralorina_cuerpos_cetonicos", null, "Cuerpos _ Cetonicos", locale), "cuerpos_cetonicos", BigDecimal.class.getName(), 100);
         }
         else if (columnName.equals("nitritos")) {
-            builder.addColumn(getMessageSource().getMessage("label_examengeneralorina_nitritos", null, "Nitritos", locale), "nitritos", HayEnOrina.class.getName(), 100);
+            builder.addColumn(getMessageSource().getMessage("label_examengeneralorina_nitritos", null, "Nitritos", locale), "nitritos", BigDecimal.class.getName(), 100);
         }
         else if (columnName.equals("leucocitos")) {
-            builder.addColumn(getMessageSource().getMessage("label_examengeneralorina_leucocitos", null, "Leucocitos", locale), "leucocitos", HayEnOrina.class.getName(), 100);
+            builder.addColumn(getMessageSource().getMessage("label_examengeneralorina_leucocitos", null, "Leucocitos", locale), "leucocitos", BigDecimal.class.getName(), 100);
         }
         else if (columnName.equals("celulas_epiteliales_a")) {
             builder.addColumn(getMessageSource().getMessage("label_examengeneralorina_celulas_epiteliales_a", null, "Celulas _ Epiteliales _ A", locale), "celulas_epiteliales_a", BigDecimal.class.getName(), 100);

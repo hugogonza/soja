@@ -116,7 +116,7 @@ public class ExamenGeneralOrina {
     @Column(name = "densidad")
     @Min(0L)
     @Max(99L)
-    @Digits(integer = 2, fraction = 2)
+    @Digits(integer = 2, fraction = 3)
     private BigDecimal densidad;
 
     /**
@@ -191,17 +191,22 @@ public class ExamenGeneralOrina {
      */
     @NotNull
     @Column(name = "nitritos")
-    @Enumerated(EnumType.STRING)
-    private HayEnOrina nitritos;
-
+    @Min(0L)
+    @Max(999L)
+    @Digits(integer = 3, fraction = 2)
+    @NumberFormat
+    private BigDecimal nitritos;
+    
     /**
      * TODO Auto-generated attribute documentation
      *
      */
     @NotNull
     @Column(name = "leucocitos")
-    @Enumerated(EnumType.STRING)
-    private HayEnOrina leucocitos;
+    @Min(0L)
+    @Max(999L)
+    @Digits(integer = 3, fraction = 2)
+    private BigDecimal leucocitos;
 
     /**
      * TODO Auto-generated attribute documentation

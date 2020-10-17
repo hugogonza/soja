@@ -28,6 +28,114 @@ privileged aspect BiometriaHematicaRepositoryImpl_Roo_Jpa_Repository_Impl {
     public static final String BiometriaHematicaRepositoryImpl.PERSONA = "persona";
     
     /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.FECHA = "fecha";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.ERITROCITOS = "eritrocitos";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.HEMOGLOBINA = "hemoglobina";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.HEMATROCITO = "hematrocito";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.AMPLITUD___DE___DISTRIBUCION___ERITROCITARIA___RDW___CV = "amplitud_de_distribucion_eritrocitaria_rdw_cv";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.AMPLITUD___DE___DISTRIBUCION___ERITROCITARIA___RDW___SD = "amplitud_de_distribucion_eritrocitaria_rdw_sd";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.VELOCIDAD___DE___SEDIMENTACION___GLOBULAR = "velocidad_de_sedimentacion_globular";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.VOLUMEN___CORPUSCULAR___MEDIO = "volumen_corpuscular_medio";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.HEMOGLOBINA___CORPUSCULAR___MEDIA = "hemoglobina_corpuscular_media";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.CONCENTRACION___MEDIA___DE___HEMOGLOBINA___CORPUSCULAR = "concentracion_media_de_hemoglobina_corpuscular";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.LEUCOCITOS = "leucocitos";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.LINFOCITOS = "linfocitos";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.MONOCITOS = "monocitos";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.NEUTROFILOS = "neutrofilos";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.EOSINOFILOS = "eosinofilos";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.BASOFILOS = "basofilos";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.PLAQUETAS = "plaquetas";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String BiometriaHematicaRepositoryImpl.VOLUMEN___PLAQUETARIO___MEDIO = "volumen_plaquetario_medio";
+    
+    /**
      * TODO Auto-generated method documentation
      * 
      * @param globalSearch
@@ -40,11 +148,29 @@ privileged aspect BiometriaHematicaRepositoryImpl_Roo_Jpa_Repository_Impl {
         
         JPQLQuery<BiometriaHematica> query = from(biometriaHematica);
         
-        Path<?>[] paths = new Path<?>[] {biometriaHematica.persona};        
+        Path<?>[] paths = new Path<?>[] {biometriaHematica.persona,biometriaHematica.fecha,biometriaHematica.eritrocitos,biometriaHematica.hemoglobina,biometriaHematica.hematrocito,biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_cv,biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_sd,biometriaHematica.velocidad_de_sedimentacion_globular,biometriaHematica.volumen_corpuscular_medio,biometriaHematica.hemoglobina_corpuscular_media,biometriaHematica.concentracion_media_de_hemoglobina_corpuscular,biometriaHematica.leucocitos,biometriaHematica.linfocitos,biometriaHematica.monocitos,biometriaHematica.neutrofilos,biometriaHematica.eosinofilos,biometriaHematica.basofilos,biometriaHematica.plaquetas,biometriaHematica.volumen_plaquetario_medio};        
         applyGlobalSearch(globalSearch, query, paths);
         
         AttributeMappingBuilder mapping = buildMapper()
-			.map(PERSONA, biometriaHematica.persona);
+			.map(PERSONA, biometriaHematica.persona)
+			.map(FECHA, biometriaHematica.fecha)
+			.map(ERITROCITOS, biometriaHematica.eritrocitos)
+			.map(HEMOGLOBINA, biometriaHematica.hemoglobina)
+			.map(HEMATROCITO, biometriaHematica.hematrocito)
+			.map(AMPLITUD___DE___DISTRIBUCION___ERITROCITARIA___RDW___CV, biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_cv)
+			.map(AMPLITUD___DE___DISTRIBUCION___ERITROCITARIA___RDW___SD, biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_sd)
+			.map(VELOCIDAD___DE___SEDIMENTACION___GLOBULAR, biometriaHematica.velocidad_de_sedimentacion_globular)
+			.map(VOLUMEN___CORPUSCULAR___MEDIO, biometriaHematica.volumen_corpuscular_medio)
+			.map(HEMOGLOBINA___CORPUSCULAR___MEDIA, biometriaHematica.hemoglobina_corpuscular_media)
+			.map(CONCENTRACION___MEDIA___DE___HEMOGLOBINA___CORPUSCULAR, biometriaHematica.concentracion_media_de_hemoglobina_corpuscular)
+			.map(LEUCOCITOS, biometriaHematica.leucocitos)
+			.map(LINFOCITOS, biometriaHematica.linfocitos)
+			.map(MONOCITOS, biometriaHematica.monocitos)
+			.map(NEUTROFILOS, biometriaHematica.neutrofilos)
+			.map(EOSINOFILOS, biometriaHematica.eosinofilos)
+			.map(BASOFILOS, biometriaHematica.basofilos)
+			.map(PLAQUETAS, biometriaHematica.plaquetas)
+			.map(VOLUMEN___PLAQUETARIO___MEDIO, biometriaHematica.volumen_plaquetario_medio);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);
@@ -66,14 +192,32 @@ privileged aspect BiometriaHematicaRepositoryImpl_Roo_Jpa_Repository_Impl {
         
         JPQLQuery<BiometriaHematica> query = from(biometriaHematica);
         
-        Path<?>[] paths = new Path<?>[] {biometriaHematica.persona};        
+        Path<?>[] paths = new Path<?>[] {biometriaHematica.persona,biometriaHematica.fecha,biometriaHematica.eritrocitos,biometriaHematica.hemoglobina,biometriaHematica.hematrocito,biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_cv,biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_sd,biometriaHematica.velocidad_de_sedimentacion_globular,biometriaHematica.volumen_corpuscular_medio,biometriaHematica.hemoglobina_corpuscular_media,biometriaHematica.concentracion_media_de_hemoglobina_corpuscular,biometriaHematica.leucocitos,biometriaHematica.linfocitos,biometriaHematica.monocitos,biometriaHematica.neutrofilos,biometriaHematica.eosinofilos,biometriaHematica.basofilos,biometriaHematica.plaquetas,biometriaHematica.volumen_plaquetario_medio};        
         applyGlobalSearch(globalSearch, query, paths);
         
         // Also, filter by the provided ids
         query.where(biometriaHematica.id.in(ids));
         
         AttributeMappingBuilder mapping = buildMapper()
-			.map(PERSONA, biometriaHematica.persona);
+			.map(PERSONA, biometriaHematica.persona)
+			.map(FECHA, biometriaHematica.fecha)
+			.map(ERITROCITOS, biometriaHematica.eritrocitos)
+			.map(HEMOGLOBINA, biometriaHematica.hemoglobina)
+			.map(HEMATROCITO, biometriaHematica.hematrocito)
+			.map(AMPLITUD___DE___DISTRIBUCION___ERITROCITARIA___RDW___CV, biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_cv)
+			.map(AMPLITUD___DE___DISTRIBUCION___ERITROCITARIA___RDW___SD, biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_sd)
+			.map(VELOCIDAD___DE___SEDIMENTACION___GLOBULAR, biometriaHematica.velocidad_de_sedimentacion_globular)
+			.map(VOLUMEN___CORPUSCULAR___MEDIO, biometriaHematica.volumen_corpuscular_medio)
+			.map(HEMOGLOBINA___CORPUSCULAR___MEDIA, biometriaHematica.hemoglobina_corpuscular_media)
+			.map(CONCENTRACION___MEDIA___DE___HEMOGLOBINA___CORPUSCULAR, biometriaHematica.concentracion_media_de_hemoglobina_corpuscular)
+			.map(LEUCOCITOS, biometriaHematica.leucocitos)
+			.map(LINFOCITOS, biometriaHematica.linfocitos)
+			.map(MONOCITOS, biometriaHematica.monocitos)
+			.map(NEUTROFILOS, biometriaHematica.neutrofilos)
+			.map(EOSINOFILOS, biometriaHematica.eosinofilos)
+			.map(BASOFILOS, biometriaHematica.basofilos)
+			.map(PLAQUETAS, biometriaHematica.plaquetas)
+			.map(VOLUMEN___PLAQUETARIO___MEDIO, biometriaHematica.volumen_plaquetario_medio);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);
@@ -98,11 +242,29 @@ privileged aspect BiometriaHematicaRepositoryImpl_Roo_Jpa_Repository_Impl {
         Assert.notNull(persona, "persona is required");
         
         query.where(biometriaHematica.persona.eq(persona));
-        Path<?>[] paths = new Path<?>[] {biometriaHematica.persona};        
+        Path<?>[] paths = new Path<?>[] {biometriaHematica.persona,biometriaHematica.fecha,biometriaHematica.eritrocitos,biometriaHematica.hemoglobina,biometriaHematica.hematrocito,biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_cv,biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_sd,biometriaHematica.velocidad_de_sedimentacion_globular,biometriaHematica.volumen_corpuscular_medio,biometriaHematica.hemoglobina_corpuscular_media,biometriaHematica.concentracion_media_de_hemoglobina_corpuscular,biometriaHematica.leucocitos,biometriaHematica.linfocitos,biometriaHematica.monocitos,biometriaHematica.neutrofilos,biometriaHematica.eosinofilos,biometriaHematica.basofilos,biometriaHematica.plaquetas,biometriaHematica.volumen_plaquetario_medio};        
         applyGlobalSearch(globalSearch, query, paths);
         
         AttributeMappingBuilder mapping = buildMapper()
-			.map(PERSONA, biometriaHematica.persona);
+			.map(PERSONA, biometriaHematica.persona)
+			.map(FECHA, biometriaHematica.fecha)
+			.map(ERITROCITOS, biometriaHematica.eritrocitos)
+			.map(HEMOGLOBINA, biometriaHematica.hemoglobina)
+			.map(HEMATROCITO, biometriaHematica.hematrocito)
+			.map(AMPLITUD___DE___DISTRIBUCION___ERITROCITARIA___RDW___CV, biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_cv)
+			.map(AMPLITUD___DE___DISTRIBUCION___ERITROCITARIA___RDW___SD, biometriaHematica.amplitud_de_distribucion_eritrocitaria_rdw_sd)
+			.map(VELOCIDAD___DE___SEDIMENTACION___GLOBULAR, biometriaHematica.velocidad_de_sedimentacion_globular)
+			.map(VOLUMEN___CORPUSCULAR___MEDIO, biometriaHematica.volumen_corpuscular_medio)
+			.map(HEMOGLOBINA___CORPUSCULAR___MEDIA, biometriaHematica.hemoglobina_corpuscular_media)
+			.map(CONCENTRACION___MEDIA___DE___HEMOGLOBINA___CORPUSCULAR, biometriaHematica.concentracion_media_de_hemoglobina_corpuscular)
+			.map(LEUCOCITOS, biometriaHematica.leucocitos)
+			.map(LINFOCITOS, biometriaHematica.linfocitos)
+			.map(MONOCITOS, biometriaHematica.monocitos)
+			.map(NEUTROFILOS, biometriaHematica.neutrofilos)
+			.map(EOSINOFILOS, biometriaHematica.eosinofilos)
+			.map(BASOFILOS, biometriaHematica.basofilos)
+			.map(PLAQUETAS, biometriaHematica.plaquetas)
+			.map(VOLUMEN___PLAQUETARIO___MEDIO, biometriaHematica.volumen_plaquetario_medio);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);

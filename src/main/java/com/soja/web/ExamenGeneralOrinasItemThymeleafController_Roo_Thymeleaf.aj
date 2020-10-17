@@ -239,8 +239,6 @@ privileged aspect ExamenGeneralOrinasItemThymeleafController_Roo_Thymeleaf {
         populateFormats(model);
         model.addAttribute("Color", Arrays.asList(ColorOrina.values()));
         model.addAttribute("Aspecto", Arrays.asList(AspectoOrina.values()));
-        model.addAttribute("nitritos", Arrays.asList(HayEnOrina.values()));
-        model.addAttribute("leucocitos", Arrays.asList(HayEnOrina.values()));
         model.addAttribute("tipo_cristales", Arrays.asList(TipoCristales.values()));
         model.addAttribute("cristales_cantidad", Arrays.asList(CantidadCristales.values()));
         model.addAttribute("levaduras", Arrays.asList(HayEnOrina.values()));

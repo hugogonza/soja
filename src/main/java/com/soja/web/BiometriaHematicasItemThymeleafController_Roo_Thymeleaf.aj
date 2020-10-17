@@ -17,6 +17,7 @@ import io.springlets.web.mvc.util.concurrency.ConcurrencyManager;
 import io.springlets.web.mvc.util.concurrency.ConcurrencyTemplate;
 import java.util.Locale;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -219,6 +220,7 @@ privileged aspect BiometriaHematicasItemThymeleafController_Roo_Thymeleaf {
      */
     public void BiometriaHematicasItemThymeleafController.populateFormats(Model model) {
         model.addAttribute("application_locale", LocaleContextHolder.getLocale().getLanguage());
+        model.addAttribute("fecha_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     /**

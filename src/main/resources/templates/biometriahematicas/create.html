@@ -45,6 +45,149 @@
       <span id="persona-error" class="help-block" data-th-if="${#fields.hasErrors('persona')}" data-th-errors="*{persona}">Error message.</span>
     </div>
 </div>
+<div class="form-group has-error has-feedback" id="biometriahematica-fecha-field" data-z="62f8ac6f" data-th-classappend="${#fields.hasErrors('fecha')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="fecha" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_fecha}">fecha</label>
+  <div class="col-md-3">
+    <input id="fecha" name="fecha" data-th-value="*{{fecha}}" type="text" class="form-control datetimepicker" placeholder="fecha" data-th-placeholder="#{label_biometriahematica_fecha}" data-th-attr="data-dateformat=${fecha_date_format}" data-toggle="tooltip" required="required" /> <span data-th-classappend="${#fields.hasErrors('fecha')}? 'glyphicon glyphicon-remove form-control-feedback'" data-th-if="${#fields.hasErrors('fecha')}" aria-hidden="true"></span>
+     <span id="fecha-error" class="help-block" data-th-if="${#fields.hasErrors('fecha')}" data-th-errors="*{fecha}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="262b686f" id="biometriahematica-eritrocitos-field" data-th-classappend="${#fields.hasErrors('eritrocitos')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="eritrocitos" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_eritrocitos}">eritrocitos</label>
+  <div class="col-md-3">
+    <input id="eritrocitos" name="eritrocitos" data-th-value="*{{eritrocitos}}" type="text" class="form-control inputmask" placeholder="eritrocitos" data-th-placeholder="#{label_biometriahematica_eritrocitos}" data-toggle="tooltip" aria-describedby="eritrocitosStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('eritrocitos')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('eritrocitos')}" aria-hidden="true"></span>
+      <span id="eritrocitos-error" class="help-block" data-th-if="${#fields.hasErrors('eritrocitos')}" data-th-errors="*{eritrocitos}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="6575d36f" id="biometriahematica-hemoglobina-field" data-th-classappend="${#fields.hasErrors('hemoglobina')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="hemoglobina" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_hemoglobina}">hemoglobina</label>
+  <div class="col-md-3">
+    <input id="hemoglobina" name="hemoglobina" data-th-value="*{{hemoglobina}}" type="text" class="form-control inputmask" placeholder="hemoglobina" data-th-placeholder="#{label_biometriahematica_hemoglobina}" data-toggle="tooltip" aria-describedby="hemoglobinaStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('hemoglobina')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('hemoglobina')}" aria-hidden="true"></span>
+      <span id="hemoglobina-error" class="help-block" data-th-if="${#fields.hasErrors('hemoglobina')}" data-th-errors="*{hemoglobina}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="6a0ee3ef" id="biometriahematica-hematrocito-field" data-th-classappend="${#fields.hasErrors('hematrocito')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="hematrocito" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_hematrocito}">hematrocito</label>
+  <div class="col-md-3">
+    <input id="hematrocito" name="hematrocito" data-th-value="*{{hematrocito}}" type="text" class="form-control inputmask" placeholder="hematrocito" data-th-placeholder="#{label_biometriahematica_hematrocito}" data-toggle="tooltip" aria-describedby="hematrocitoStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('hematrocito')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('hematrocito')}" aria-hidden="true"></span>
+      <span id="hematrocito-error" class="help-block" data-th-if="${#fields.hasErrors('hematrocito')}" data-th-errors="*{hematrocito}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="4e35b5af" id="biometriahematica-amplitud_de_distribucion_eritrocitaria_rdw_cv-field" data-th-classappend="${#fields.hasErrors('amplitud_de_distribucion_eritrocitaria_rdw_cv')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="amplitud_de_distribucion_eritrocitaria_rdw_cv" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_amplitud_de_distribucion_eritrocitaria_rdw_cv}">amplitud_de_distribucion_eritrocitaria_rdw_cv</label>
+  <div class="col-md-3">
+    <input id="amplitud_de_distribucion_eritrocitaria_rdw_cv" name="amplitud_de_distribucion_eritrocitaria_rdw_cv" data-th-value="*{{amplitud_de_distribucion_eritrocitaria_rdw_cv}}" type="text" class="form-control inputmask" placeholder="amplitud_de_distribucion_eritrocitaria_rdw_cv" data-th-placeholder="#{label_biometriahematica_amplitud_de_distribucion_eritrocitaria_rdw_cv}" data-toggle="tooltip" aria-describedby="amplitud_de_distribucion_eritrocitaria_rdw_cvStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('amplitud_de_distribucion_eritrocitaria_rdw_cv')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('amplitud_de_distribucion_eritrocitaria_rdw_cv')}" aria-hidden="true"></span>
+      <span id="amplitud_de_distribucion_eritrocitaria_rdw_cv-error" class="help-block" data-th-if="${#fields.hasErrors('amplitud_de_distribucion_eritrocitaria_rdw_cv')}" data-th-errors="*{amplitud_de_distribucion_eritrocitaria_rdw_cv}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="4e3cf1ef" id="biometriahematica-amplitud_de_distribucion_eritrocitaria_rdw_sd-field" data-th-classappend="${#fields.hasErrors('amplitud_de_distribucion_eritrocitaria_rdw_sd')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="amplitud_de_distribucion_eritrocitaria_rdw_sd" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_amplitud_de_distribucion_eritrocitaria_rdw_sd}">amplitud_de_distribucion_eritrocitaria_rdw_sd</label>
+  <div class="col-md-3">
+    <input id="amplitud_de_distribucion_eritrocitaria_rdw_sd" name="amplitud_de_distribucion_eritrocitaria_rdw_sd" data-th-value="*{{amplitud_de_distribucion_eritrocitaria_rdw_sd}}" type="text" class="form-control inputmask" placeholder="amplitud_de_distribucion_eritrocitaria_rdw_sd" data-th-placeholder="#{label_biometriahematica_amplitud_de_distribucion_eritrocitaria_rdw_sd}" data-toggle="tooltip" aria-describedby="amplitud_de_distribucion_eritrocitaria_rdw_sdStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('amplitud_de_distribucion_eritrocitaria_rdw_sd')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('amplitud_de_distribucion_eritrocitaria_rdw_sd')}" aria-hidden="true"></span>
+      <span id="amplitud_de_distribucion_eritrocitaria_rdw_sd-error" class="help-block" data-th-if="${#fields.hasErrors('amplitud_de_distribucion_eritrocitaria_rdw_sd')}" data-th-errors="*{amplitud_de_distribucion_eritrocitaria_rdw_sd}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="deb288f" id="biometriahematica-velocidad_de_sedimentacion_globular-field" data-th-classappend="${#fields.hasErrors('velocidad_de_sedimentacion_globular')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="velocidad_de_sedimentacion_globular" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_velocidad_de_sedimentacion_globular}">velocidad_de_sedimentacion_globular</label>
+  <div class="col-md-3">
+    <input id="velocidad_de_sedimentacion_globular" name="velocidad_de_sedimentacion_globular" data-th-value="*{{velocidad_de_sedimentacion_globular}}" type="text" class="form-control inputmask" placeholder="velocidad_de_sedimentacion_globular" data-th-placeholder="#{label_biometriahematica_velocidad_de_sedimentacion_globular}" data-toggle="tooltip" aria-describedby="velocidad_de_sedimentacion_globularStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('velocidad_de_sedimentacion_globular')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('velocidad_de_sedimentacion_globular')}" aria-hidden="true"></span>
+      <span id="velocidad_de_sedimentacion_globular-error" class="help-block" data-th-if="${#fields.hasErrors('velocidad_de_sedimentacion_globular')}" data-th-errors="*{velocidad_de_sedimentacion_globular}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="5e7cbeaf" id="biometriahematica-volumen_corpuscular_medio-field" data-th-classappend="${#fields.hasErrors('volumen_corpuscular_medio')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="volumen_corpuscular_medio" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_volumen_corpuscular_medio}">volumen_corpuscular_medio</label>
+  <div class="col-md-3">
+    <input id="volumen_corpuscular_medio" name="volumen_corpuscular_medio" data-th-value="*{{volumen_corpuscular_medio}}" type="text" class="form-control inputmask" placeholder="volumen_corpuscular_medio" data-th-placeholder="#{label_biometriahematica_volumen_corpuscular_medio}" data-toggle="tooltip" aria-describedby="volumen_corpuscular_medioStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('volumen_corpuscular_medio')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('volumen_corpuscular_medio')}" aria-hidden="true"></span>
+      <span id="volumen_corpuscular_medio-error" class="help-block" data-th-if="${#fields.hasErrors('volumen_corpuscular_medio')}" data-th-errors="*{volumen_corpuscular_medio}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="90b6a4f" id="biometriahematica-hemoglobina_corpuscular_media-field" data-th-classappend="${#fields.hasErrors('hemoglobina_corpuscular_media')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="hemoglobina_corpuscular_media" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_hemoglobina_corpuscular_media}">hemoglobina_corpuscular_media</label>
+  <div class="col-md-3">
+    <input id="hemoglobina_corpuscular_media" name="hemoglobina_corpuscular_media" data-th-value="*{{hemoglobina_corpuscular_media}}" type="text" class="form-control inputmask" placeholder="hemoglobina_corpuscular_media" data-th-placeholder="#{label_biometriahematica_hemoglobina_corpuscular_media}" data-toggle="tooltip" aria-describedby="hemoglobina_corpuscular_mediaStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('hemoglobina_corpuscular_media')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('hemoglobina_corpuscular_media')}" aria-hidden="true"></span>
+      <span id="hemoglobina_corpuscular_media-error" class="help-block" data-th-if="${#fields.hasErrors('hemoglobina_corpuscular_media')}" data-th-errors="*{hemoglobina_corpuscular_media}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="7367b1cf" id="biometriahematica-concentracion_media_de_hemoglobina_corpuscular-field" data-th-classappend="${#fields.hasErrors('concentracion_media_de_hemoglobina_corpuscular')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="concentracion_media_de_hemoglobina_corpuscular" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_concentracion_media_de_hemoglobina_corpuscular}">concentracion_media_de_hemoglobina_corpuscular</label>
+  <div class="col-md-3">
+    <input id="concentracion_media_de_hemoglobina_corpuscular" name="concentracion_media_de_hemoglobina_corpuscular" data-th-value="*{{concentracion_media_de_hemoglobina_corpuscular}}" type="text" class="form-control inputmask" placeholder="concentracion_media_de_hemoglobina_corpuscular" data-th-placeholder="#{label_biometriahematica_concentracion_media_de_hemoglobina_corpuscular}" data-toggle="tooltip" aria-describedby="concentracion_media_de_hemoglobina_corpuscularStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('concentracion_media_de_hemoglobina_corpuscular')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('concentracion_media_de_hemoglobina_corpuscular')}" aria-hidden="true"></span>
+      <span id="concentracion_media_de_hemoglobina_corpuscular-error" class="help-block" data-th-if="${#fields.hasErrors('concentracion_media_de_hemoglobina_corpuscular')}" data-th-errors="*{concentracion_media_de_hemoglobina_corpuscular}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="2c1ea16f" id="biometriahematica-leucocitos-field" data-th-classappend="${#fields.hasErrors('leucocitos')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="leucocitos" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_leucocitos}">leucocitos</label>
+  <div class="col-md-3">
+    <input id="leucocitos" name="leucocitos" data-th-value="*{{leucocitos}}" type="text" class="form-control inputmask" placeholder="leucocitos" data-th-placeholder="#{label_biometriahematica_leucocitos}" data-toggle="tooltip" aria-describedby="leucocitosStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('leucocitos')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('leucocitos')}" aria-hidden="true"></span>
+      <span id="leucocitos-error" class="help-block" data-th-if="${#fields.hasErrors('leucocitos')}" data-th-errors="*{leucocitos}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="8966e3af" id="biometriahematica-linfocitos-field" data-th-classappend="${#fields.hasErrors('linfocitos')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="linfocitos" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_linfocitos}">linfocitos</label>
+  <div class="col-md-3">
+    <input id="linfocitos" name="linfocitos" data-th-value="*{{linfocitos}}" type="text" class="form-control inputmask" placeholder="linfocitos" data-th-placeholder="#{label_biometriahematica_linfocitos}" data-toggle="tooltip" aria-describedby="linfocitosStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('linfocitos')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('linfocitos')}" aria-hidden="true"></span>
+      <span id="linfocitos-error" class="help-block" data-th-if="${#fields.hasErrors('linfocitos')}" data-th-errors="*{linfocitos}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="9ed5462f" id="biometriahematica-monocitos-field" data-th-classappend="${#fields.hasErrors('monocitos')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="monocitos" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_monocitos}">monocitos</label>
+  <div class="col-md-3">
+    <input id="monocitos" name="monocitos" data-th-value="*{{monocitos}}" type="text" class="form-control inputmask" placeholder="monocitos" data-th-placeholder="#{label_biometriahematica_monocitos}" data-toggle="tooltip" aria-describedby="monocitosStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('monocitos')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('monocitos')}" aria-hidden="true"></span>
+      <span id="monocitos-error" class="help-block" data-th-if="${#fields.hasErrors('monocitos')}" data-th-errors="*{monocitos}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="ebe984cf" id="biometriahematica-neutrofilos-field" data-th-classappend="${#fields.hasErrors('neutrofilos')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="neutrofilos" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_neutrofilos}">neutrofilos</label>
+  <div class="col-md-3">
+    <input id="neutrofilos" name="neutrofilos" data-th-value="*{{neutrofilos}}" type="text" class="form-control inputmask" placeholder="neutrofilos" data-th-placeholder="#{label_biometriahematica_neutrofilos}" data-toggle="tooltip" aria-describedby="neutrofilosStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('neutrofilos')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('neutrofilos')}" aria-hidden="true"></span>
+      <span id="neutrofilos-error" class="help-block" data-th-if="${#fields.hasErrors('neutrofilos')}" data-th-errors="*{neutrofilos}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="80e3928f" id="biometriahematica-eosinofilos-field" data-th-classappend="${#fields.hasErrors('eosinofilos')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="eosinofilos" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_eosinofilos}">eosinofilos</label>
+  <div class="col-md-3">
+    <input id="eosinofilos" name="eosinofilos" data-th-value="*{{eosinofilos}}" type="text" class="form-control inputmask" placeholder="eosinofilos" data-th-placeholder="#{label_biometriahematica_eosinofilos}" data-toggle="tooltip" aria-describedby="eosinofilosStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('eosinofilos')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('eosinofilos')}" aria-hidden="true"></span>
+      <span id="eosinofilos-error" class="help-block" data-th-if="${#fields.hasErrors('eosinofilos')}" data-th-errors="*{eosinofilos}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="d23061cf" id="biometriahematica-basofilos-field" data-th-classappend="${#fields.hasErrors('basofilos')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="basofilos" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_basofilos}">basofilos</label>
+  <div class="col-md-3">
+    <input id="basofilos" name="basofilos" data-th-value="*{{basofilos}}" type="text" class="form-control inputmask" placeholder="basofilos" data-th-placeholder="#{label_biometriahematica_basofilos}" data-toggle="tooltip" aria-describedby="basofilosStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('basofilos')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('basofilos')}" aria-hidden="true"></span>
+      <span id="basofilos-error" class="help-block" data-th-if="${#fields.hasErrors('basofilos')}" data-th-errors="*{basofilos}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="dc310acf" id="biometriahematica-plaquetas-field" data-th-classappend="${#fields.hasErrors('plaquetas')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="plaquetas" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_plaquetas}">plaquetas</label>
+  <div class="col-md-3">
+    <input id="plaquetas" name="plaquetas" data-th-value="*{{plaquetas}}" type="text" class="form-control inputmask" placeholder="plaquetas" data-th-placeholder="#{label_biometriahematica_plaquetas}" data-toggle="tooltip" aria-describedby="plaquetasStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="3" data-inputmask-digits="2" required="required" min="0" max="999" />
+      <span data-th-classappend="${#fields.hasErrors('plaquetas')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('plaquetas')}" aria-hidden="true"></span>
+      <span id="plaquetas-error" class="help-block" data-th-if="${#fields.hasErrors('plaquetas')}" data-th-errors="*{plaquetas}">Error message.</span>
+  </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="b0d6e92f" id="biometriahematica-volumen_plaquetario_medio-field" data-th-classappend="${#fields.hasErrors('volumen_plaquetario_medio')}? 'has-error has-feedback'" data-th-class="form-group">
+  <label for="volumen_plaquetario_medio" class="col-md-3 control-label" data-th-text="#{label_biometriahematica_volumen_plaquetario_medio}">volumen_plaquetario_medio</label>
+  <div class="col-md-3">
+    <input id="volumen_plaquetario_medio" name="volumen_plaquetario_medio" data-th-value="*{{volumen_plaquetario_medio}}" type="text" class="form-control inputmask" placeholder="volumen_plaquetario_medio" data-th-placeholder="#{label_biometriahematica_volumen_plaquetario_medio}" data-toggle="tooltip" aria-describedby="volumen_plaquetario_medioStatus" data-inputmask-alias="numeric" data-inputmask-integerdigits="2" data-inputmask-digits="2" required="required" min="0" max="99" />
+      <span data-th-classappend="${#fields.hasErrors('volumen_plaquetario_medio')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('volumen_plaquetario_medio')}" aria-hidden="true"></span>
+      <span id="volumen_plaquetario_medio-error" class="help-block" data-th-if="${#fields.hasErrors('volumen_plaquetario_medio')}" data-th-errors="*{volumen_plaquetario_medio}">Error message.</span>
+  </div>
+</div>
             </fieldset>
 
 

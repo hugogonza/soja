@@ -300,9 +300,9 @@ privileged aspect ExamenGeneralOrina_Roo_JavaBean {
     /**
      * Gets nitritos value
      * 
-     * @return HayEnOrina
+     * @return BigDecimal
      */
-    public HayEnOrina ExamenGeneralOrina.getNitritos() {
+    public BigDecimal ExamenGeneralOrina.getNitritos() {
         return this.nitritos;
     }
     
@@ -312,7 +312,7 @@ privileged aspect ExamenGeneralOrina_Roo_JavaBean {
      * @param nitritos
      * @return ExamenGeneralOrina
      */
-    public ExamenGeneralOrina ExamenGeneralOrina.setNitritos(HayEnOrina nitritos) {
+    public ExamenGeneralOrina ExamenGeneralOrina.setNitritos(BigDecimal nitritos) {
         this.nitritos = nitritos;
         return this;
     }
@@ -320,9 +320,9 @@ privileged aspect ExamenGeneralOrina_Roo_JavaBean {
     /**
      * Gets leucocitos value
      * 
-     * @return HayEnOrina
+     * @return BigDecimal
      */
-    public HayEnOrina ExamenGeneralOrina.getLeucocitos() {
+    public BigDecimal ExamenGeneralOrina.getLeucocitos() {
         return this.leucocitos;
     }
     
@@ -332,7 +332,7 @@ privileged aspect ExamenGeneralOrina_Roo_JavaBean {
      * @param leucocitos
      * @return ExamenGeneralOrina
      */
-    public ExamenGeneralOrina ExamenGeneralOrina.setLeucocitos(HayEnOrina leucocitos) {
+    public ExamenGeneralOrina ExamenGeneralOrina.setLeucocitos(BigDecimal leucocitos) {
         this.leucocitos = leucocitos;
         return this;
     }
@@ -665,6 +665,8 @@ privileged aspect ExamenGeneralOrina_Roo_JavaBean {
                 ", urobilinogeno='" + urobilinogeno + '\'' + 
                 ", bilirrubina='" + bilirrubina + '\'' + 
                 ", cuerpos_cetonicos='" + cuerpos_cetonicos + '\'' + 
+                ", nitritos='" + nitritos + '\'' + 
+                ", leucocitos='" + leucocitos + '\'' + 
                 ", celulas_epiteliales_a='" + celulas_epiteliales_a + '\'' + 
                 ", celulas_epiteliales_b='" + celulas_epiteliales_b + '\'' + 
                 ", leucocitos_a='" + leucocitos_a + '\'' + 

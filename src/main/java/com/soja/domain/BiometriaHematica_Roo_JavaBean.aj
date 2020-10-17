@@ -5,6 +5,8 @@ package com.soja.domain;
 
 import com.soja.domain.BiometriaHematica;
 import com.soja.domain.Persona;
+import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Objects;
 
 privileged aspect BiometriaHematica_Roo_JavaBean {
@@ -70,6 +72,366 @@ privileged aspect BiometriaHematica_Roo_JavaBean {
     }
     
     /**
+     * Gets fecha value
+     * 
+     * @return Calendar
+     */
+    public Calendar BiometriaHematica.getFecha() {
+        return this.fecha;
+    }
+    
+    /**
+     * Sets fecha value
+     * 
+     * @param fecha
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setFecha(Calendar fecha) {
+        this.fecha = fecha;
+        return this;
+    }
+    
+    /**
+     * Gets eritrocitos value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getEritrocitos() {
+        return this.eritrocitos;
+    }
+    
+    /**
+     * Sets eritrocitos value
+     * 
+     * @param eritrocitos
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setEritrocitos(BigDecimal eritrocitos) {
+        this.eritrocitos = eritrocitos;
+        return this;
+    }
+    
+    /**
+     * Gets hemoglobina value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getHemoglobina() {
+        return this.hemoglobina;
+    }
+    
+    /**
+     * Sets hemoglobina value
+     * 
+     * @param hemoglobina
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setHemoglobina(BigDecimal hemoglobina) {
+        this.hemoglobina = hemoglobina;
+        return this;
+    }
+    
+    /**
+     * Gets hematrocito value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getHematrocito() {
+        return this.hematrocito;
+    }
+    
+    /**
+     * Sets hematrocito value
+     * 
+     * @param hematrocito
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setHematrocito(BigDecimal hematrocito) {
+        this.hematrocito = hematrocito;
+        return this;
+    }
+    
+    /**
+     * Gets amplitud_de_distribucion_eritrocitaria_rdw_cv value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getAmplitud_de_distribucion_eritrocitaria_rdw_cv() {
+        return this.amplitud_de_distribucion_eritrocitaria_rdw_cv;
+    }
+    
+    /**
+     * Sets amplitud_de_distribucion_eritrocitaria_rdw_cv value
+     * 
+     * @param amplitud_de_distribucion_eritrocitaria_rdw_cv
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setAmplitud_de_distribucion_eritrocitaria_rdw_cv(BigDecimal amplitud_de_distribucion_eritrocitaria_rdw_cv) {
+        this.amplitud_de_distribucion_eritrocitaria_rdw_cv = amplitud_de_distribucion_eritrocitaria_rdw_cv;
+        return this;
+    }
+    
+    /**
+     * Gets amplitud_de_distribucion_eritrocitaria_rdw_sd value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getAmplitud_de_distribucion_eritrocitaria_rdw_sd() {
+        return this.amplitud_de_distribucion_eritrocitaria_rdw_sd;
+    }
+    
+    /**
+     * Sets amplitud_de_distribucion_eritrocitaria_rdw_sd value
+     * 
+     * @param amplitud_de_distribucion_eritrocitaria_rdw_sd
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setAmplitud_de_distribucion_eritrocitaria_rdw_sd(BigDecimal amplitud_de_distribucion_eritrocitaria_rdw_sd) {
+        this.amplitud_de_distribucion_eritrocitaria_rdw_sd = amplitud_de_distribucion_eritrocitaria_rdw_sd;
+        return this;
+    }
+    
+    /**
+     * Gets velocidad_de_sedimentacion_globular value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getVelocidad_de_sedimentacion_globular() {
+        return this.velocidad_de_sedimentacion_globular;
+    }
+    
+    /**
+     * Sets velocidad_de_sedimentacion_globular value
+     * 
+     * @param velocidad_de_sedimentacion_globular
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setVelocidad_de_sedimentacion_globular(BigDecimal velocidad_de_sedimentacion_globular) {
+        this.velocidad_de_sedimentacion_globular = velocidad_de_sedimentacion_globular;
+        return this;
+    }
+    
+    /**
+     * Gets volumen_corpuscular_medio value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getVolumen_corpuscular_medio() {
+        return this.volumen_corpuscular_medio;
+    }
+    
+    /**
+     * Sets volumen_corpuscular_medio value
+     * 
+     * @param volumen_corpuscular_medio
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setVolumen_corpuscular_medio(BigDecimal volumen_corpuscular_medio) {
+        this.volumen_corpuscular_medio = volumen_corpuscular_medio;
+        return this;
+    }
+    
+    /**
+     * Gets hemoglobina_corpuscular_media value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getHemoglobina_corpuscular_media() {
+        return this.hemoglobina_corpuscular_media;
+    }
+    
+    /**
+     * Sets hemoglobina_corpuscular_media value
+     * 
+     * @param hemoglobina_corpuscular_media
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setHemoglobina_corpuscular_media(BigDecimal hemoglobina_corpuscular_media) {
+        this.hemoglobina_corpuscular_media = hemoglobina_corpuscular_media;
+        return this;
+    }
+    
+    /**
+     * Gets concentracion_media_de_hemoglobina_corpuscular value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getConcentracion_media_de_hemoglobina_corpuscular() {
+        return this.concentracion_media_de_hemoglobina_corpuscular;
+    }
+    
+    /**
+     * Sets concentracion_media_de_hemoglobina_corpuscular value
+     * 
+     * @param concentracion_media_de_hemoglobina_corpuscular
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setConcentracion_media_de_hemoglobina_corpuscular(BigDecimal concentracion_media_de_hemoglobina_corpuscular) {
+        this.concentracion_media_de_hemoglobina_corpuscular = concentracion_media_de_hemoglobina_corpuscular;
+        return this;
+    }
+    
+    /**
+     * Gets leucocitos value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getLeucocitos() {
+        return this.leucocitos;
+    }
+    
+    /**
+     * Sets leucocitos value
+     * 
+     * @param leucocitos
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setLeucocitos(BigDecimal leucocitos) {
+        this.leucocitos = leucocitos;
+        return this;
+    }
+    
+    /**
+     * Gets linfocitos value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getLinfocitos() {
+        return this.linfocitos;
+    }
+    
+    /**
+     * Sets linfocitos value
+     * 
+     * @param linfocitos
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setLinfocitos(BigDecimal linfocitos) {
+        this.linfocitos = linfocitos;
+        return this;
+    }
+    
+    /**
+     * Gets monocitos value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getMonocitos() {
+        return this.monocitos;
+    }
+    
+    /**
+     * Sets monocitos value
+     * 
+     * @param monocitos
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setMonocitos(BigDecimal monocitos) {
+        this.monocitos = monocitos;
+        return this;
+    }
+    
+    /**
+     * Gets neutrofilos value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getNeutrofilos() {
+        return this.neutrofilos;
+    }
+    
+    /**
+     * Sets neutrofilos value
+     * 
+     * @param neutrofilos
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setNeutrofilos(BigDecimal neutrofilos) {
+        this.neutrofilos = neutrofilos;
+        return this;
+    }
+    
+    /**
+     * Gets eosinofilos value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getEosinofilos() {
+        return this.eosinofilos;
+    }
+    
+    /**
+     * Sets eosinofilos value
+     * 
+     * @param eosinofilos
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setEosinofilos(BigDecimal eosinofilos) {
+        this.eosinofilos = eosinofilos;
+        return this;
+    }
+    
+    /**
+     * Gets basofilos value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getBasofilos() {
+        return this.basofilos;
+    }
+    
+    /**
+     * Sets basofilos value
+     * 
+     * @param basofilos
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setBasofilos(BigDecimal basofilos) {
+        this.basofilos = basofilos;
+        return this;
+    }
+    
+    /**
+     * Gets plaquetas value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getPlaquetas() {
+        return this.plaquetas;
+    }
+    
+    /**
+     * Sets plaquetas value
+     * 
+     * @param plaquetas
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setPlaquetas(BigDecimal plaquetas) {
+        this.plaquetas = plaquetas;
+        return this;
+    }
+    
+    /**
+     * Gets volumen_plaquetario_medio value
+     * 
+     * @return BigDecimal
+     */
+    public BigDecimal BiometriaHematica.getVolumen_plaquetario_medio() {
+        return this.volumen_plaquetario_medio;
+    }
+    
+    /**
+     * Sets volumen_plaquetario_medio value
+     * 
+     * @param volumen_plaquetario_medio
+     * @return BiometriaHematica
+     */
+    public BiometriaHematica BiometriaHematica.setVolumen_plaquetario_medio(BigDecimal volumen_plaquetario_medio) {
+        this.volumen_plaquetario_medio = volumen_plaquetario_medio;
+        return this;
+    }
+    
+    /**
      * This `equals` implementation is specific for JPA entities and uses 
      * the entity identifier for it, following the article in 
      * https://vladmihalcea.com/2016/06/06/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
@@ -107,7 +469,25 @@ privileged aspect BiometriaHematica_Roo_JavaBean {
     public String BiometriaHematica.toString() {
         return "BiometriaHematica {" + 
                 "id='" + id + '\'' + 
-                ", version='" + version + '\'' + "}" + super.toString();
+                ", version='" + version + '\'' + 
+                ", fecha='" + fecha == null ? null : java.text.DateFormat.getDateTimeInstance().format(fecha.getTime()) + '\'' + 
+                ", eritrocitos='" + eritrocitos + '\'' + 
+                ", hemoglobina='" + hemoglobina + '\'' + 
+                ", hematrocito='" + hematrocito + '\'' + 
+                ", amplitud_de_distribucion_eritrocitaria_rdw_cv='" + amplitud_de_distribucion_eritrocitaria_rdw_cv + '\'' + 
+                ", amplitud_de_distribucion_eritrocitaria_rdw_sd='" + amplitud_de_distribucion_eritrocitaria_rdw_sd + '\'' + 
+                ", velocidad_de_sedimentacion_globular='" + velocidad_de_sedimentacion_globular + '\'' + 
+                ", volumen_corpuscular_medio='" + volumen_corpuscular_medio + '\'' + 
+                ", hemoglobina_corpuscular_media='" + hemoglobina_corpuscular_media + '\'' + 
+                ", concentracion_media_de_hemoglobina_corpuscular='" + concentracion_media_de_hemoglobina_corpuscular + '\'' + 
+                ", leucocitos='" + leucocitos + '\'' + 
+                ", linfocitos='" + linfocitos + '\'' + 
+                ", monocitos='" + monocitos + '\'' + 
+                ", neutrofilos='" + neutrofilos + '\'' + 
+                ", eosinofilos='" + eosinofilos + '\'' + 
+                ", basofilos='" + basofilos + '\'' + 
+                ", plaquetas='" + plaquetas + '\'' + 
+                ", volumen_plaquetario_medio='" + volumen_plaquetario_medio + '\'' + "}" + super.toString();
     }
     
 }

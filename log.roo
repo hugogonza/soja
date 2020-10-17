@@ -250,3 +250,30 @@ web mvc controller --all --pathPrefix /api
 // Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-10-10 00:16:06
 web mvc controller --all --responseType THYMELEAF
 web mvc controller --all --responseType THYMELEAF
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-10-16 13:52:52
+focus --class ~.domain.ExamenGeneralOrina
+field number --fieldName leucocitos --type java.math.BigDecimal --column leucocitos --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --force
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-10-16 16:23:19
+focus --class ~.domain.ExamenGeneralOrina
+field number --fieldName nitritos --type java.math.BigDecimal --column nitritos --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --force
+field number --fieldName nitritos --type java.math.BigDecimal --column nitritos --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 --force
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-10-16 17:17:23
+focus --class ~.domain.BiometriaHematica
+field date --fieldName fecha --type java.util.Calendar --column fecha --persistenceType JPA_TIMESTAMP --notNull
+field number --fieldName eritrocitos --type java.math.BigDecimal --column eritrocitos --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName hemoglobina --type java.math.BigDecimal --column hemoglobina --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName hematrocito --type java.math.BigDecimal --column hematrocito --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName amplitud_de_distribucion_eritrocitaria_rdw_cv --type java.math.BigDecimal --column amplitud_de_distribucion_eritrocitaria_rdw_cv --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName amplitud_de_distribucion_eritrocitaria_rdw_sd --type java.math.BigDecimal --column amplitud_de_distribucion_eritrocitaria_rdw_sd --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName velocidad_de_sedimentacion_globular --type java.math.BigDecimal --column velocidad_de_sedimentacion_globular --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName volumen_corpuscular_medio --type java.math.BigDecimal --column volumen_corpuscular_medio --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName hemoglobina_corpuscular_media --type java.math.BigDecimal --column hemoglobina_corpuscular_media --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName concentracion_media_de_hemoglobina_corpuscular --type java.math.BigDecimal --column concentracion_media_de_hemoglobina_corpuscular --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName leucocitos --type java.math.BigDecimal --column leucocitos --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName linfocitos --type java.math.BigDecimal --column linfocitos --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName monocitos --type java.math.BigDecimal --column monocitos --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName neutrofilos --type java.math.BigDecimal --column neutrofilos --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName eosinofilos --type java.math.BigDecimal --column eosinofilos --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName basofilos --type java.math.BigDecimal --column basofilos --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
+field number --fieldName plaquetas --type java.math.BigDecimal --column plaquetas --notNull --min 0 --max 999 --digitsInteger 3 --digitsFraction 2 
+field number --fieldName volumen_plaquetario_medio --type java.math.BigDecimal --column volumen_plaquetario_medio --notNull --min 0 --max 99 --digitsInteger 2 --digitsFraction 2 
