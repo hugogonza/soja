@@ -7,5 +7,5 @@ package com.soja;
  */
 public enum Genero {
 
-    HOMBRE, MUJER
+    H, M
 }

@@ -68,17 +68,17 @@
      <span id="fechaNacimiento-error" class="help-block" data-th-if="${#fields.hasErrors('fechaNacimiento')}" data-th-errors="*{fechaNacimiento}">Error message.</span>
   </div>
 </div>
-<div class="form-group has-error has-feedback" data-z="dc4ca7dd" id="persona-grupo-field" data-th-classappend="${#fields.hasErrors('grupo')}? 'has-error has-feedback'" data-th-class="form-group">
-    <label for="grupo" class="col-md-3 control-label" data-th-text="#{label_persona_grupo}">grupo</label>
-    <div class="col-md-6">
-      <!-- Select2 -->
-      <select data-th-field="*{grupo}" class="form-control dropdown-select-simple" data-allow-clear="true" data-th-attr="data-placeholder=#{info_select_an_option}">
-         <option data-th-each="item : ${grupo}" data-th-value="${item}" data-th-text="${{item}}">Value</option>
-      </select>
-      <span data-th-classappend="${#fields.hasErrors('grupo')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('grupo')}" aria-hidden="true"></span>
-      <span id="grupo-error" class="help-block" data-th-if="${#fields.hasErrors('grupo')}" data-th-errors="*{grupo}">Error message.</span>
-    </div>
-</div>
+<!-- <div class="form-group has-error has-feedback" data-z="dc4ca7dd" id="persona-grupo-field" data-th-classappend="${#fields.hasErrors('grupo')}? 'has-error has-feedback'" data-th-class="form-group"> -->
+<!--     <label for="grupo" class="col-md-3 control-label" data-th-text="#{label_persona_grupo}">grupo</label> -->
+<!--     <div class="col-md-6"> -->
+<!--       Select2 -->
+<!--       <select data-th-field="*{grupo}" class="form-control dropdown-select-simple" data-allow-clear="true" data-th-attr="data-placeholder=#{info_select_an_option}"> -->
+<!--          <option data-th-each="item : ${grupo}" data-th-value="${item}" data-th-text="${{item}}">Value</option> -->
+<!--       </select> -->
+<!--       <span data-th-classappend="${#fields.hasErrors('grupo')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('grupo')}" aria-hidden="true"></span> -->
+<!--       <span id="grupo-error" class="help-block" data-th-if="${#fields.hasErrors('grupo')}" data-th-errors="*{grupo}">Error message.</span> -->
+<!--     </div> -->
+<!-- </div> -->
              </fieldset>
 
 
